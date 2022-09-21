@@ -1,0 +1,61 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+- if(sliderbgcolor != undefined){bgcls = sliderbgcolor }else{bgcls = "bg-grey5"}
+section.main-products#mainProducts(class="h-max w-full relative pt-28 pb-28 overflow-hidden " + bgcls)
+    .main-wrapper(class="relative w-full z-9")
+        .content(class="flex items-start gap-7 mb-2")
+            div(class="w-full md:w-col5")
+                h2(class="text-dark font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                    span.block(data-aos="fade-up")=mainProductsTEXT
+            div(class="w-full md:w-col7")            
+                h5(class="block w-full text-font font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small")
+                    p=mainProductsDesc 
+    .w-full.block
+        .productsSlider(data-nav=".proMumSlider")
+            each pro in mainProItems
+                .w-100.productItem 
+                    .wrapper(class="w-full block relative video-size overflow-hidden")
+                        img(src=pro[0], alt=pro[1], class="absolute w-full h-full object-cover left-0 top-0 z-1")
+                        .before(class="absolute w-full h-full left-0 top-0 bg-dark opacity-50 z-3")
+                        .cont(class=" absolute z-9 bottom-14 ltr:left-14 rtl:right-14")
+                            h2.ti(class="w-full xxl:text-extramedium lg:text-moremedium2 text-moremedium text-white font-body")=pro[1]    
+                            h5.desc(class="w-full lg:w-col10 2xl:text-normal xl:text-normal2 lg:text-semismall text-small leading-6 text-white mt-2 xxl:mt-6 font-head")=pro[2]
+                            a.btn(href=singleProductURL,class="inline-block relative pt-3 pb-3 pr-8 pl-8 xxl:mt-10 xl:mt-5 mt-3 bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group")
+                                .before(class=" bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                                span.relative.z-9=moreBtnTEXT        
+    .w-full.block.text-center
+        .arrows.inline-flex.mr-auto.ml-auto.w-max.items-center
+            .prev.inline-block(data-parent=".arrows", class="cursor-pointer w-[39px] group disabled") 
+                <svg class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" width="39.01" height="39.009" viewBox="0 0 39.01 39.009">
+                    <g data-name="Group 87405" transform="translate(0)">
+                        <g data-name="Ellipse 13925" transform="translate(0)" fill="#f3f4f6" stroke="#1b335f" stroke-width="1.5">
+                        <ellipse class="group-hover:fill-second group-hover:stroke-second" cx="19.505" cy="19.504" rx="18.755" ry="18.754" fill="none"/>
+                        </g>
+                        <path class="group-hover:stroke-white" data-name="Path 86845" d="M12270.084,6451.851l-6.568,6.568,6.568,6.568" transform="translate(-12247.227 -6438.747)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                    </g>
+                </svg>
+            div(class="w-[110px] flex-1 h-max mr-4 ml-4 overflow-hidden")    
+                .proMum.proMumSlider(data-nav=".productsSlider") 
+                    -var i = 0
+                    each pro in mainProItems
+                        -i++
+                        - if(i < 10){i= "0" + i}
+                        .numItem.h-max 
+                            div(class="text-extranormal block font-head font-bold text-dark relative")
+                                span.inline-block(class="pt-2 pb-2 pr-2 pl-2")=i    
+                                span(class=" inline-block dash absolute mt-2 extranormal ltr:-right-1 rtl:-left-1") -    
+            .next.inline-block(data-parent=".arrows", class="cursor-pointer w-[39px] group ") 
+
+                <svg class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" width="39.009" height="39.009" viewBox="0 0 39.009 39.009">
+                    <g data-name="Group 87404" transform="translate(-1059 -6755)">
+                        <g data-name="Ellipse 13925" transform="translate(1059 6755)" fill="#f3f4f6" stroke="#1b335f" stroke-width="1.5">
+                        <circle class="group-hover:fill-second group-hover:stroke-second" cx="19.504" cy="19.504" r="18.754" fill="none"/>
+                        </g>
+                        <path class="group-hover:stroke-white" data-name="Path 86845" d="M12263.516,6451.851l6.567,6.568-6.567,6.568" transform="translate(-11188.363 316.253)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                    </g>
+                </svg>
+

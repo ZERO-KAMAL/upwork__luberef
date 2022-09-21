@@ -1,0 +1,55 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+section.job-register#jobRegister(class="h-max bg-dark text-white w-full relative pt-28 pb-28 mb-10")
+    .before(class="w-col4 h-full absolute top-0 ltr:left-0 rtl:right-0 ltr:bg-job-register rtl:bg-job-register-rtl bg-no-repeat bg-cover ltr:bg-right-top rtl:bg-left-top")
+    .main-wrapper(class="relative w-full block z-9")
+        
+        .content(class="block w-full lg:w-col7 ltr:lg:ml-col5  rtl:lg:mr-col5")
+            
+            div(class="w-fullpt-5 pb-5")
+                h2(class="text-white font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")                    
+                    span.block(data-aos="fade-up")=jobRegisterTEXT[0]
+            form(class="flex flex-wrap w-full")
+                - var m = 0, cl="" , cls=""
+                each ifeild in jobRegisterFieldsTEXT
+                    -cls = ifeild[0] + "-wrapper"
+                    -if(m % 2 ==0){cl = " ltr:pr-10 rtl:pr-10"}else{cl=" rtl:pr-10 ltr:pr-10"}
+                    div(class="w-full lg:w-col6 " +cl  )
+                        div.input-wrapper(class="w-full relative mt-7 "+ cls)
+                            -if(ifeild[0] == "date"){                                
+                                input(type="text", required, onfocus="(this.type='date')" onfocusout="(this.type='text')" , class="z-3 relative bg-transparent border-0 appearance-none outline-none w-full font-head 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-white pt-1 pb-1")
+                            -}else{
+                                input(type=ifeild[0] ,required, class="z-3 relative bg-transparent border-0 appearance-none outline-none w-full font-head 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-white pt-1 pb-1")
+                            -}    
+                            label(class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-white absolute top-[2px] left-0 z-1 font-head pointer-events-none ")
+                                span.opacity-50=ifeild[1]
+                                span.text-second.mr-2.ml-2 * 
+                            .before(class="absolute bottom-0 right-0 left-0 w-auto  h-[1px] bg-white opacity-50 ")                            
+                            -if(ifeild[0] == "email"){msg = emailErorTEXT}else{msg=errorTEXT}
+                            .error-msg(class="font-head text-small text-red absolute left-0 -bottom-[22px] hidden lg:text-[10px] lg:-bottom-[16px]")=msg    
+                    -m++    
+                div(class="w-full" )
+                    div.input-wrapper(class="w-full relative mt-7")
+                        label(class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small block text-white relative mb-[10px] z-3 font-head pointer-events-none ")
+                            span.opacity-50=ResumeTEXT
+                        div#upload-area(class="relative w-full !min-h-[117px] table text-white text-center upload-area m-0 bg-dark2 border-1 border-dashed border-grey8 pt-5 pb-5", data-file-textcolor="white",data-file-bgcolor="dark2")
+                            .up-content.w-full.h-full.table-cell.align-middle.text-center
+                                input(type="file",name="files",  class="absolute top-0 left-0 w-full h-full z-9 cursor-pointer opacity-0 outline-0")
+                                .icon-area(class="w-100 relative block text-center xl:text-morenormal1 text-normal font-head")
+                                    div(class="hidden w-full mt-3 mb-3 text-white up-drop-here")=dropHereTEXT
+                                    div(class="w-full mt-3 mb-3 up-drag")
+                                        span.text-second= uploadTEXT[0]                       
+                                        span.text-white.opacity-45= uploadTEXT[1]             
+                                   
+                        div(class="w-full mt-5 text-center error hidden")
+                            span(class="text-red font-bold")=invalidFileTEXT 
+                        .w-full.files
+                div(class="w-full lg:w-col6 " )
+                    div.input-wrapper(class="w-full relative mt-7 ")
+                        button.btn(class="w-[188px] appearance-none outline-0 border-0 relative z-9 inline-block pt-3 pb-3 pr-8 pl-8 mt-12 bg-white text-dark uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group hover:text-white", type="submit" ,data-aos="fade-up", data-aos-delay="200")
+                                .before(class=" bg-main w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                                span.relative.z-9=sendTEXT    

@@ -1,0 +1,19 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+section.main-overview#mainOverview(class="h-max w-full relative pt-28 pb-28")
+    .main-wrapper(class="relative w-full z-9")
+        .content(class="flex lg:flex-row gap-14 items-center")
+            div(class="w-full lg:w-col6 xxl:w-[800px] overflow-hidden sqaure-size")
+                img.block(src=src="assets/Sustainability.jpg", alt=sustainabilityTEXT, class="w-full h-full object-cover")
+            div(class="w-full lg:w-col6 xxl:flex-1 pt-5 pb-5")
+                h2(class="text-dark font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                    span.block(data-aos="fade-up")=sustainabilityTEXT
+                h5(class="block w-full text-font font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small mt-7", data-aos="fade-up", data-aos-delay="100")
+                    p=sustainabilityDesc    
+                a.btn(href=aboutURL,class="inline-block relative pt-3 pb-3 pr-8 pl-8 mt-11 bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group", data-aos="fade-up", data-aos-delay="200")
+                    .before(class=" bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                    span.relative.z-9=moreBtnTEXT      

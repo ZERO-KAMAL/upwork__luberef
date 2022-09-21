@@ -1,0 +1,64 @@
+
+extends index.pug
+block title
+    title= title  + " | " + baseOilHeadTEXT[1] 
+block mainContent
+    -headMainTitleTop = careerTEXT
+    -headMainTitle = careersHeadTEXT[0]
+    -headMainDesc = careersHeadTEXT[1]
+    - bgObject = "image"
+    -headMainImg = "../assets/headers/jobs.jpg"
+    include includes/_mainHeader        
+    section.main-jobs#mainJobs(class="h-max w-full relative pt-28 pb-28")
+        .main-wrapper(class="relative w-full z-9")
+            .content(class="d-block w-full border-1 border-solid border-grey8 mb-20")
+                form(class="w-full flex items-center p-5 border-b-1 border-solid border-b-grey8", id="searchBar")
+                    .icon(class="w-[25px] ltr:mr-4 rtl:ml-4") 
+                        img(src="assets/search.svg", class="w-full")
+                    div.input-wrapper.flex-1.relative
+                        input(type="text" , class="searchLabel z-3 relative bg-transparent border-0 appearance-none outline-none w-full font-head 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-font pt-1 pb-1")
+                        label(class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-font2 absolute top-1 left-0 z-1 font-head pointer-events-none ")
+                            span.opacity-50=placeholderSearchTEXT
+                    .clear.clear-btn(data-parent="#searchBar",class="cursor-pointer hover:main-text pt-2 pb-2 ps-4 pe-4 mr-4 ml-4 inline-block text-morenormal1 text-dark")= clearTEXT    
+                    button.btn(type="submit",class="jobSearch min-w-[188px] z-9 inline-block relative pt-3 pb-3 pr-3 pl-3 mt-5 lg:mt-0 bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group ", data-aos="fade-up", data-aos-delay="200")
+                        .before(class="bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                        span(class="group-hover:text-white relative z-9")=searchTEXT
+                form(class="w-full flex items-center p-5")
+                    .slelects#slelects(class="flex-1 flex lg:flex-wrap text-center")
+                        .inline-block.select-wrapper.relative(class="ltr:mr-7 rtl:ml-7")
+                            .after(class="arrow inline-block w-[15px] h-[10px] bg-contain bg-no-repeat bg-select-arrow absolute bottom-6 ltr:right-4 rtl:left-4 z-9")                                    
+                            select(class="min-w-[198px] w-auto text-morenormal1 text-font2 pt-4 pb-4 pr-5 pl-5 appearance-none outline-none border-1 border-solid border-grey8 text-center")
+                                option  
+                                option option 
+                                option option 
+                                option option 
+                            label(class="w-full 2xl:text-morenormal1 xl:text-morenormal1 lg:text-normal text-normal text-center text-font2 absolute top-4 left-0 z-1 font-head pointer-events-none ")=CountryTEXT   
+                        .inline-block.select-wrapper.relative(class="ltr:mr-7 rtl:ml-7")
+                            .after(class="arrow inline-block w-[15px] h-[10px] bg-contain bg-no-repeat bg-select-arrow absolute bottom-6 ltr:right-4 rtl:left-4 z-9")                                    
+                            select(class="min-w-[198px] w-auto text-morenormal1 text-font2 pt-4 pb-4 pr-5 pl-5 appearance-none outline-none border-1 border-solid border-grey8 text-center")
+                                option  
+                                option option 
+                                option option 
+                                option option 
+                            label(class="w-full 2xl:text-morenormal1 xl:text-morenormal1 lg:text-normal text-normal text-center text-font2 absolute top-4 left-0 z-1 font-head pointer-events-none ")=CityTEXT     
+                        .inline-block.select-wrapper.relative(class="ltr:mr-7 rtl:ml-7")
+                            .after(class="arrow inline-block w-[15px] h-[10px] bg-contain bg-no-repeat bg-select-arrow absolute bottom-6 ltr:right-4 rtl:left-4 z-9")                                    
+                            select(class="min-w-[198px] w-auto text-morenormal1 text-font2 pt-4 pb-4 pr-5 pl-5 appearance-none outline-none border-1 border-solid border-grey8 text-center")
+                                option  
+                                option option 
+                                option option 
+                                option option 
+                            label(class="w-full 2xl:text-morenormal1 xl:text-morenormal1 lg:text-normal text-normal text-center text-font2 absolute top-4 left-0 z-1 font-head pointer-events-none ")=CareerfieldsTEXT         
+                    .clearAll.inline-block
+                        .clear-btn(data-parent="#slelects",class="cursor-pointer hover:main-text pt-2 pb-2 ps-4 pe-4 mr-4 ml-4 inline-block text-morenormal1 text-dark uppercase ltr:float-right rtl:float-left")= clearAllTEXT    
+                                 
+            - var num = 5
+            include includes/_jobsItems
+            div(class="w-full text-center mt-10")
+                a.btn-more(href="#", class="inline-flex 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-body uppercase items-center mt-8 group")
+                    span(class="inline-block ltr:mr-3 rtl:ml-3 group-hover:text-second group-hover:tracking-2 trans")=loadMoreTEXT
+                    span(class="inline-block arrow-bottom rotate-90 w-2")
+                        <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="8.52" height="14.21" viewBox="0 0 8.52 14.21">
+                            <path class="group-hover:stroke-second trans" data-name="Path 99277" d="M123.145,571.616l5.691,5.691L123.145,583" transform="translate(-121.73 -570.202)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                        </svg>                   
+    include includes/_jobRegister                          

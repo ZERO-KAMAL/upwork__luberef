@@ -1,0 +1,38 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+-
+    var cls
+    if(bgObject != "video"){
+        cls = "bg-no-repeat bg-cover bg-fixed bg-[url('"+headMainImg+"')]" 
+    }else{
+        cls = ""
+    }
+section(class="xxl:h-[82.5vh] xl:h-[90vh] h-[95vh] w-full relative overflow-hidden main-header " + cls)
+    -if(bgObject == "video"){
+        video(src="assets/header-video.mp4", loop, muted, autoplay, class="absolute w-full h-full object-cover z-2")
+    -}
+    .before(class="absolute w-full h-full top-0 left-0 bg-header-cover z-5")
+    .main-wrapper(class="relative h-full w-full z-9")
+        .content(class="absolute block w-col10 lg:w-col8 h-max bottom-28")
+            -if(headMainTitleTop != undefined ){
+                h4(class="text-second text-extranormal font-body mb-3")=headMainTitleTop        
+            -}
+            h1(class="text-white font-body font-normal xxl:text-large lg:text-extrabig break-title uppercase mb-6", data-break-after="3", data-aos="fade-up")=headMainTitle
+            
+            .gold-grad(class="relative w-auto max-w-max h-max pt-6 pb-6 ltr:pr-12 ltr:pl-3 rtl:pl-12 rtl:pr-3")=headMainDesc
+                div(class="w-auto h-full z-1 bg-white opacity-10 top-0 block absolute ltr:rounded-br-[100px] ltr:-left-2 ltr:right-0 rtl:-right-2 rtl:left-0 rtl:rounded-bl-[100px]")
+            -if(showHeaderBtn == true){
+                a.btn(href=jobsURL,class="inline-block relative pt-3 pb-3 pr-8 pl-8 mt-12 bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group")
+                    .before(class=" bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                    span.relative.z-9.pb-2 Find opportunities
+            -}     
+        -if(showScroll == true){
+            a.scroll(href="#mainOverview", class="absolute bottom-14 inline-flex items-center ltr:right-5 rtl:left-5  rotate-90 ")
+                div(class="text-extrasmall font-normal text-white uppercase inline-block ltr:mr-2 rtl:ml-2 tracking-1" )=scrollTEXT 
+                div(class="animated-line w-10 h-[2px] inline-block")
+                    span(class="w-full h-full block animate-scroll-line bg-white")
+        -}

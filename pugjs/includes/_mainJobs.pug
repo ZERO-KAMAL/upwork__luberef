@@ -1,0 +1,18 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+section.main-jobs#mainJobs(class="h-max w-full relative pt-28 pb-28")
+    .main-wrapper(class="relative w-full z-9")
+        .content(class="d-block w-full")
+            div(class="w-full lg:w-col6 pt-5 pb-5")
+                h2(class="text-dark font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                    span.block(data-aos="fade-up")=findJobTEXT
+        - var num = 3
+        include _jobsItems
+        div(class="w-full text-center")
+            a.btn(href=jobsURL,class=" z-9 inline-block relative pt-3 pb-3 pr-8 pl-8 mt-16 mr-auto ml-auto  bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group ", data-aos="fade-up", data-aos-delay="200")
+                .before(class="bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                span.relative.z-9=exploreBtnTEXT

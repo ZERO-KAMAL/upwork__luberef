@@ -1,0 +1,50 @@
+
+extends index.pug
+block title
+    title= title  + " | " + baseOilHeadTEXT[1] 
+block mainContent     
+    section.single-news#singleNews(class="h-max w-full relative pt-28 pb-28 mt-[100px]")
+        .main-wrapper(class="relative w-full z-9")
+            .single-news-details(class="relative w-full lg:w-col8 ltr:lg:ml-col2 rtl:lg:mr-col2")
+                .content(class="d-block w-full")
+                    .newsHead(class="w-full block text-center")
+                        .details(class="w-full flex-1")
+                            h1.ti(class="w-full block text-dark xlx:text-huge xl:text-extramedium lg:text-semiextramedium text-moremedium2")
+                                |Luberef Products are Available in South Africa
+                            h3(class="text-font font-head italic xl:text-morenormal1 text-normal opacity-70  pt-7 pr-9 pl-9  xl:pr-16 xl:pl-16 xxl:pr-[120px] xxl:pl-[120px] mt-7")
+                                |"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
+                     
+            .single-news-img(class="relative w-full lg:w-col10 ltr:lg:ml-col1 rtl:lg:mr-col1 mt-16")
+                .img(class="block w-full rect-size overflow-hidden")
+                    img(src="assets/news/1.jpg", alt="Luberef Products are Available in South Africa", class="w-full h-full object-cover trans group-hover:scale-125")
+                .news-details(class=" flex items-center pt-5 pb-5 mt-3")
+                    div(class="w-full lg:w-col5")
+                        div.date(class="flex 2xl:text-normal xl:text-normal2 lg:text-semismall text-small2 text-main font-normal font-head ")
+                            span.icon(class="w-[15px] ltr:mr-2 rtl:ml-2") 
+                                i.far.fa-calendar
+                            span(class="group-hover:text-main") 14/06/2022
+                    
+                    div(class="w-full lg:w-col7")
+                        div.share(class="flex items-center ltr:float-right rtl:float-left ")
+                            a(class="inline-block 2xl:text-normal xl:text-normal2 lg:text-semismall text-small2 font-head ltr:mr-5 rtl:ml-5 text-main hover:text-second")
+                                i.fab.fa-linkedin-in
+                            a(class="inline-block 2xl:text-normal xl:text-normal2 lg:text-semismall text-small2 font-head ltr:mr-5 rtl:ml-5 text-main hover:text-second")
+                                i.fab.fa-twitter
+                            div(class="flex 2xl:text-normal xl:text-normal2 lg:text-semismall text-small2 text-main font-normal font-head ltr:pl-5 ltr:border-l-1 ltr:border-l-main rtl:pl-5 rtl:border-l-1 rtl:border-l-main")
+                                span(class="group-hover:text-main uppercase ltr:mr-2 rtl:ml-2") Share
+                                span.icon(class="w-[15px]") 
+                                    i.fas.fa-share-alt
+                                
+            .single-news-content(class="mt-16 relative w-full lg:w-col8 ltr:lg:ml-col2 rtl:lg:mr-col2 xl:pr-10 xl:pl-10")  
+                div(class="font-normal text-font 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-head")
+                    p=RequirementsTEXT[1][0]
+                    p=RequirementsTEXT[1][1]
+                    p=RequirementsTEXT[1][2]       
+                    p=RequirementsTEXT[1][0]
+                    p=RequirementsTEXT[1][1]
+                    p=RequirementsTEXT[1][2]       
+                     
+
+    include includes/_latestNews
+    include includes/_mainContact
+

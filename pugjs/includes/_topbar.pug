@@ -1,0 +1,51 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+header.top-bar#topBar(class="p-0 absolute top-0 left-0 right-0 w-full z-10 pt-5 pb-10 bg-no-repeat bg-cover ltr:bg-navbar ltr:bg-left-bottom rtl:bg-navbar-rtl rtl:bg-right-bottom")
+    .main-wrapper.topbar-wrapper(class="w-full relative z-4 flex") 
+        a(href='index.html' class="block")
+            img.logo(src='assets/Logo-Web.svg' alt=title, class="w-[135px]")
+        .topbar-links(class="flex-1 inline-block")
+            .top-links(class="flex ltr:float-right rtl:float-left")
+                each tl in topLinks
+                    //a(href=tl[1], class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small relative font-body font-normal text-dark inline-block pl-4 pr-4 before:content-[''] before:h-5 before:w-[2px] before:bg-grey3 before:absolute before:top-2 ltr:before:right-0 hover:text-second ")=tl[0]
+                    a(href=tl[1], class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small relative font-body font-normal text-dark inline-block pl-4 pr-4 border-solid ltr:border-r-2 ltr:border-r-grey3 rtl:border-l-2 rtl:border-l-grey3 hover:text-second ")
+                        span(class="inline-block pb-1")=tl[0]
+                a(href="#" class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small relative font-body font-normal text-dark inline-block ltr:pl-4 rtl:pr-4 hover:text-second  ")=langTEXT    
+            .nav-links(class="w-full inline-block  pt-7")
+                .nav-links-wrapper(class="flex items-center ltr:float-right rtl:float-left")
+                    each bl in bottomLinks
+                        -if(bl[1] != undefined){
+                            .dropdown(class="relative group cursor-pointer pt-2 pb-2 -mt-4 overflow-hidden hover:overflow-visible")    
+                                a(href=bl[0][1], class="flex items-center xxl:text-morenormal xl:text-extranormal lg:2xl:text-normal  text-small2 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-dark font-normal ltr:ml-10 rtl:mr-10 trans group-hover:text-main")
+                                    span(class="inline-block ltr:mr-3 rtl:ml-3")=bl[0][0]
+
+                                    span(class="inline-block w-3 ") 
+                                        <svg class="w-full h-auto"  xmlns="http://www.w3.org/2000/svg" width="12.811" height="6.406" viewBox="0 0 12.811 6.406">
+                                            <path class="trans group-hover:stroke-main"  data-name="Path 99276" d="M803.741,115l5,4,5-4" transform="translate(-802.336 -113.594)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                        </svg>
+                                .dropdown-menu(class="absolute w-56 top-0 block trans -z-10 group-hover:z-10")
+                                    .dropdownmenu-wrapper(class="trans w-full relative -bottom-20 pr-4 pl-4 pt-5 pb-5 opacity-0 bg-white group-hover:opacity-100")
+                                        each sbl in bl[1] 
+                                            a(href=sbl[1], class="trans 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-dark font-head font-normal ltr:text-left rtl:text-right block pt-3 pb-3 border-b-2 border-b-grey4 border-solid last:border-b-0 hover:bg-second hover:text-white ltr:hover:pl-3 rtl:hover:pr-3")=sbl[0]
+
+                        -}else{
+                            a(href=bl[0][1], class="trans -mt-3 xxl:text-morenormal xl:text-extranormal lg:2xl:text-normal text-small2 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-dark font-normal ltr:ml-10 rtl:mr-10 hover:text-main")=bl[0][0]
+                        -}
+                    a(href="#", class="trans flex items-center -mt-3 xxl:text-morenormal xl:text-extranormal lg:2xl:text-normal text-small2 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-dark font-normal  ltr:ml-10 rtl:mr-10 hover:text-main group")
+                        span(class="inline-block ltr:mr-3 rtl:ml-3")=bottomNavTEXT[4]
+                        span(class="inline-block xl:w-4 lg:w-3 ") 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="!w-full" width="17.858" height="17.858" viewBox="0 0 17.858 17.858">
+                                <g data-name="Icon feather-external-link" transform="translate(0.75 1.277)">
+                                    <path class="trans group-hover:stroke-main" data-name="Path 60109" d="M17.511,15.072v5.2a1.735,1.735,0,0,1-1.735,1.735H6.235A1.735,1.735,0,0,1,4.5,20.276V10.735A1.735,1.735,0,0,1,6.235,9h5.2" transform="translate(-4.5 -6.181)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                    <g data-name="Group 43017" transform="translate(6.505 -0.217)">
+                                    <path class="trans group-hover:stroke-main" data-name="Path 60110" d="M22.5,4.5h5.2V9.7" transform="translate(-18.163 -4.5)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                    <path class="trans group-hover:stroke-main" data-name="Path 60111" d="M15,14.041,24.541,4.5" transform="translate(-15 -4.5)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                    </g>
+                                </g>
+                            </svg>
+
+

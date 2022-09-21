@@ -1,0 +1,35 @@
+include ../_vars
+-if(is_rtl == true){
+    include ../_vars_rtl
+-}else{
+    include ../_vars_ltr
+-}
+section.whoweare-history#whoweareHistory(class="h-screen w-full overflow-hidden table relative pt-28 pb-28 bg-whoweare-history bg-fixed bg-no-repeat bg-cover")
+    .before(class="absolute w-full h-full top-0 left-0 object-cover bg-black opacity-90 z-1")                    
+    .main-wrapper(class="relative w-full table-cell z-9 align-middle")
+        .content(class="w-full flex lg:flex-row")
+            div(class="w-full lg:w-col10 xl:w-col8 m-auto")
+                .w-full.titles.text-center
+                    h1(class="text-white font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase" data-aos="fade-up")=HistoryTEXT[0]
+                    h5(class="text-white font-head font-thin 2xl:text-normal xl:text-normal2 lg:text-semismall text-small mt-4" data-aos="fade-up")=HistoryTEXT[1]
+                div(class="w-full flex lg:flex-wrap mt-12")
+                    -var i = 1
+                    each wh in whoHistoryTEXT
+                        -if((i % 2) != 0){
+                            div(class="w-full lg:w-col6 history-container")    
+                                .historyItem 
+                                    .w-100.wrapper(class="relative") 
+                                        h3.number(class="xxl:text-extramedium lg:text-moremedium2 text-moremedium font-body font-bold text-second relative pb-6 block ltr:pr-9 rtl:pl-9 border-b-1 border-b-second border-solid before:w-3 before:h-3 before:rounded-full before:bg-second before:absolute before:content-[''] before:-bottom-[6px] ltr:before:-right-[6px] rtl:before:-left-[6px] ltr:after:border-r-1 ltr:after:border-r-second rtl:after:border-l-1 rtl:after:border-l-second after:border-dashed after:absolute after:w-full after:h-full after:block after:-z-1 after:top-0 ltr:after:-right-[1px] rtl:after:-left-[1px]")
+                                            span.block.w-full(data-aos="fade-right")=wh[0]
+                                        h5.cont(class="w-full pt-6 pb-1 ltr:pr-9 rtl:pl-9 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-head text-white ltr:border-r-1 border-dashed ltr:border-r-second rtl:border-l-1 rtl:border-l-second")
+                                            span.block.w-full(data-aos="fade-right", data-aos-delay="100")=wh[1]
+                        -}else{
+                            div(class="w-full lg:w-col6 ltr:lg:ml-col6 rtl:lg:mr-col6 history-container")
+                                .historyItem.second 
+                                    .w-100.wrapper(class="relative") 
+                                        h3.number(class="xxl:text-extramedium lg:text-moremedium2 text-moremedium font-body font-bold text-second relative pb-6 block rtl:pr-9 ltr:pl-9 border-b-1 border-b-second border-solid before:w-3 before:h-3 before:rounded-full before:bg-second before:absolute before:content-[''] before:-bottom-[6px] rtl:before:-right-[6px] ltr:before:-left-[6px] rtl:after:border-r-1 rtl:after:border-r-second ltr:after:border-l-1 ltr:after:border-l-second after:border-dashed after:absolute after:w-full after:h-full after:block after:-z-1 after:top-0 rtl:after:-right-[1px] ltr:after:-left-[1px]")
+                                            span.block.w-full(data-aos="fade-left")=wh[0]
+                                        h5.cont(class="w-full pt-6 pb-1 rtl:pr-9 ltr:pl-9 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-head text-white rtl:border-r-1 border-dashed rtl:border-r-second ltr:border-l-1 ltr:border-l-second")
+                                            span.block.w-full(data-aos="fade-left", data-aos-delay="100")=wh[1]    
+                        -} 
+                        -i++

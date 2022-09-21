@@ -1,0 +1,38 @@
+
+extends index.pug
+block title
+    title= title  + " | " + baseOilHeadTEXT[1] 
+block mainContent
+    -headMainTitle = careersHeadTEXT[0]
+    -headMainDesc = careersHeadTEXT[1]
+    - bgObject = "image"
+    - showHeaderBtn = true
+    -headMainImg = "../assets/headers/careers.jpg"
+    include includes/_mainHeader
+    - var overviewSecTitle = careersOverTEXT[0]
+    - var overviewSecDesc = [careersOverTEXT[1]]
+    - var overviewSecImg = "assets/careers/overview.jpg"
+
+    include includes/_mainOverview
+   
+    - subFactsTEXT = ourValueTEXT[0]
+    - subFactsDesc = ourValueTEXT[1]
+    - allSubFactsTEXT = whoAllFactsTEXT
+    include includes/_mainFacts                         
+    include includes/_mainWork                       
+    include includes/_productsValue
+    section.main-strategy#mainStrategy(class="h-max w-full relative pt-28 pb-28")
+        .main-wrapper(class="relative w-full z-9")
+            .content(class="flex lg:flex-row gap-14 items-center")
+                div(class="w-full lg:w-col6 overflow-hidden sqaure-size")
+                    img.block(src=src="assets/careers/safety.jpg", alt=whoStrategyTEXT[0], class="w-full h-full object-cover")        
+                div(class="w-full lg:w-col6 pt-5 pb-5")
+                    h2(class="text-dark font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                        span.block(data-aos="fade-up")=safetyTEXT[0]
+                    h5(class="block w-full text-font font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small leading-6 mt-5", data-aos="fade-up", data-aos-delay="100")
+                        p=safetyTEXT[1]    
+                
+                
+                                         
+    include includes/_mainJobs                       
+    include includes/_jobRegister                          

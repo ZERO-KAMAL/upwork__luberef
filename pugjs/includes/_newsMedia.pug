@@ -1,0 +1,56 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+section.news-media#newsMedia(class="h-max w-full relative pt-28 pb-28")
+    .main-wrapper(class="relative w-full z-9")
+        
+        .content(class="w-full flex flex-wrap mt-12")
+            .main-news(class="w-full mb-10")               
+                .newsItem.w-full.mt-5
+                    .wrapper(class="w-full flex flex-wrap gap-8 lg:items-center")
+                        a.img(href=singleNewsURL,class="block lg:inline-block w-full lg:w-col5 xl:w-col6 xxl:w-col7 video-size relative")
+                            img(src="assets/news/1.jpg", alt=newsTitleTEXT, class="w-full h-full object-cover trans group-hover:scale-125")
+                            .date(class="absolute top-4 ltr:right-4 rtl:left-4 inline-block pr-4 pl-4 pt-3 pb-3 leading-5 text-center bg-dark text-white")
+                                .block.day 20
+                                .block.month=dateTEXT
+                        
+                        .cont(class="flex-1 pt-5 pb-5") 
+                            a.ti(href=singleNewsURL,class="block w-full xxl:text-medium lg:text-morenormal text-normal font-normal font-body text-dark trans hover:text-main" data-aos="fade-up")=newsTitleTEXT 
+                            .desc(class="block w-full mt-5 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal  font-head text-font" data-aos="fade-up" )=newsDescTEXT     
+                            a.btn-more(href=singleNewsURL, class="inline-flex 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-body uppercase items-center mt-8 group")
+                                span(class="inline-block ltr:mr-3 rtl:ml-3 group-hover:text-second group-hover:tracking-2 trans")=moreBtnTEXT
+                                span(class="inline-block arrow-right w-2")
+                                    <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="8.52" height="14.21" viewBox="0 0 8.52 14.21">
+                                        <path class="group-hover:stroke-second trans" data-name="Path 99277" d="M123.145,571.616l5.691,5.691L123.145,583" transform="translate(-121.73 -570.202)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                                            </svg>
+            .news-container(class="w-full flex lg:flex-row gap-5")
+                - var clrs = [ "#EFB844", "#6FB455","#099BD6"]       
+                -for(var n = 0; n < 3 ; n++ ){ 
+                    div(class="w-full md:w-col6 xl:w-col4")               
+                        .newsItem.w-full.mt-5
+                            .wrapper(class="w-full block relative group")
+                                a.img(href=singleNewsURL,class="block w-full video-size overflow-hidden")
+                                    img(src="assets/discover/"+ (n + 1) +".jpg", alt=newsTitleTEXT, class="w-full h-full object-cover trans group-hover:scale-125")
+                                .date(class="absolute top-4 ltr:right-4 rtl:left-4 inline-block pr-4 pl-4 pt-3 pb-3 leading-5 text-center bg-dark text-white")
+                                    .block.day 20
+                                    .block.month=dateTEXT
+                                .cont(class=" border-t-3 border-solid border-t-["+clrs[n]+"] pt-5 pb-5") 
+                                    a.ti(href=singleNewsURL,class="block w-full xxl:text-medium lg:text-morenormal text-normal font-normal font-body text-dark trans hover:text-main" data-aos="fade-up")=newsTitleTEXT 
+                                    .desc(class="block w-full mt-5 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal  font-head text-font" data-aos="fade-up" )=newsDescTEXT     
+                                    a.btn-more(href=singleNewsURL, class="inline-flex 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-body uppercase items-center mt-8 group")
+                                        span(class="inline-block ltr:mr-3 rtl:ml-3 group-hover:text-second group-hover:tracking-2 trans")=moreBtnTEXT
+                                        span(class="inline-block arrow-right w-2")
+                                            <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="8.52" height="14.21" viewBox="0 0 8.52 14.21">
+                                                <path class="group-hover:stroke-second trans" data-name="Path 99277" d="M123.145,571.616l5.691,5.691L123.145,583" transform="translate(-121.73 -570.202)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                                            </svg>
+                -}                        
+            div(class="w-full text-center mt-10")
+                a.btn-more(href="#", class="inline-flex 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-body uppercase items-center mt-8 group")
+                    span(class="inline-block ltr:mr-3 rtl:ml-3 text-main group-hover:text-second group-hover:tracking-2 trans")=loadMoreTEXT
+                    span(class="inline-block arrow-bottom rotate-90 w-2")
+                        <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="8.52" height="14.21" viewBox="0 0 8.52 14.21">
+                            <path class="stroke-main  group-hover:stroke-second trans" data-name="Path 99277" d="M123.145,571.616l5.691,5.691L123.145,583" transform="translate(-121.73 -570.202)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                        </svg>   

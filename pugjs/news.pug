@@ -1,0 +1,13 @@
+
+extends index.pug
+block title
+    title= title + " | " + bottomNavTEXT[1]
+block mainContent
+    -headMainTitle = newsTEXT[0]
+    -headMainDesc = newsTEXT[1]
+    - bgObject = "image"
+    -headMainImg = "../assets/headers/news.jpg"
+    include includes/_mainHeader
+    include includes/_newsMedia                       
+    include includes/_resources                       
+    include includes/_mainContact                       

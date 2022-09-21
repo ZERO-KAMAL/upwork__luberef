@@ -1,0 +1,33 @@
+
+extends index.pug
+block title
+    title= title  + " | " + baseOilHeadTEXT[1] 
+block mainContent     
+    section.single-job#singleJob(class="h-max w-full relative pt-28 pb-28 mt-[100px]")
+        .main-wrapper(class="relative w-full z-9")
+            .single-job-details(class="relative w-full lg:w-col8 ltr:lg:ml-col2 rtl:lg:mr-col2")
+                .content(class="block w-full")
+                    .jobHead(class="w-full")
+                            .details(class="w-full block")
+                                h1.ti(href=singleJobURL,class="w-full block text-dark xlx:text-huge xl:text-extramedium lg:text-semiextramedium text-moremedium2")=jobsItemsTEXT[0][0]
+                                .state(class="w-full flex flex-row")
+                                    each di in jobsItemsTEXT[1]
+                                        div(class="inline-block pt-2 pb-2 font-head text-semismall group")
+                                            span(class="text-main border-solid group-last:border-0 border-grey7 ltr:pr-4 ltr:mr-4 ltr:border-r-1 rtl:border-l-1 rtl:pl-4 rtl:ml-4")= di
+                .content.description(class="flex lg:flex-row items-center w-full mt-16 p-8 border-1 border-solid border-grey8")                
+                    .apply-linkedin(class="w-full flex-1")
+                        h3.ti(class="w-full block text-dark xxl:text-medium lg:text-morenormal text-normal1 hover:text-second")=applyLinkedTEXT[0]
+                        .desc(class="w-full 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-font font-head mt-2")=applyLinkedTEXT[1]
+                            
+                    .btn    
+                        a.btn(href=applyToJobURL,class="z-9 inline-block relative pt-3 pb-3 pr-3 pl-3 mt-5 lg:mt-0 bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group ", data-aos="fade-up", data-aos-delay="200")
+                            .before(class="bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                            span(class="group-hover:text-white ltr:mr-2 rtl:ml-2 relative z-9")
+                                .fab.fa-linkedin
+                            
+                            span.relative.z-9=EasyApplyTEXT
+                
+                include includes/_singleJobRegister.pug      
+
+    include includes/_mainContact
+

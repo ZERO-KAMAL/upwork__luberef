@@ -1,0 +1,21 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+section.main-about#mainAbout(class="h-screen w-full overflow-hidden table relative pt-28 pb-28 bg-about bg-fixed bg-no-repeat bg-cover")
+                        
+    .main-wrapper(class="relative w-full table-cell z-9 align-middle")
+        .content(class="w-full lg:w-col8 xl:w-col6")
+            img(src="assets/lubehob.png", alt=mainAboutTEXT class="w-[259px] mb-5")
+            div(class="w-full")
+                h2(class="text-white font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                    span.block(data-aos="fade-up")=mainAboutTEXT
+            div(class="w-full mt-7")            
+                h5(class="block w-full text-white font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small", data-aos="fade-up")
+                    p=mainAboutDesc[0] 
+                    p=mainAboutDesc[1] 
+                a.btn(href=lubehubURL,class="inline-block relative pt-3 pb-3 pr-8 pl-8 mt-12 bg-white text-dark uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group hover:text-white", data-aos="fade-up", data-aos-delay="200")
+                    .before(class=" bg-main w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                    span.relative.z-9=moreBtnTEXT    

@@ -1,0 +1,23 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+section.main-facts#mainFacts(class="h-max w-full relative pt-28 pb-28")
+    .main-wrapper(class="relative w-full z-9")
+        .content(class="flex flex-wrap items-start gap-7 text-center")
+            div(class="w-full -mb-7 text-center")
+                h2(class="text-dark w-full font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase" data-aos="fade-up")=subFactsTEXT
+                
+            div(class="w-full lg:w-col8 xl:w-col6 mr-auto ml-auto text-center")
+                h5(class="text-font font-head font-thin 2xl:text-normal xl:text-normal2 lg:text-semismall text-small mt-4" data-aos="fade-up")=subFactsDesc
+            .all-facts(class="w-full flex flex-wrap items-center")   
+                each fact in allSubFactsTEXT
+                    .factItem(class="w-full md:w-col6 lg:w-col4 m-auto pr-6 pl-6 mt-20")
+                        .icon(class="w-[118px] h-[118px] rounded-full table bg-second m-auto p-7 border-5 border-solid border-grey5", data-aos="fade-up") 
+                            .icon-img.table-cell.w-full.h-maxl.align-middle
+                                img(src=fact[0], alt=fact[1] ,class="w-full", data-aos="zoom-in", data-aos-delay="300")
+                        .cont 
+                            .ti(class="block w-full mt-5 xxl:text-medium lg:text-morenormal text-normal font-normal font-body text-dark", data-aos="fade-up",  data-aos-delay="200")=fact[1]    
+                            .desc(class="block w-full mt-5 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal  font-head text-font", data-aos="fade-up",  data-aos-delay="300")=fact[2]    

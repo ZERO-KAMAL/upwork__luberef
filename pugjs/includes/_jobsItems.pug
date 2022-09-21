@@ -1,0 +1,26 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+.content(class="flex flex-col items-center mt-10")
+    -for(var i = 0; i< num;i++){ 
+        -if(i%2 == 0){var cls= "bg-grey5"}else{var cls= "bg-white"}
+        .jobItem(class="w-full flex lg:flex-row items-start xl:items-center gap-8 p-10 "+cls)
+            .details(class="w-full lg:w-col5 xl:w-col5 xxl:max-w-30p")
+                a.ti(href=singleJobURL,class="w-full block text-dark text-medium1 lg:text-moremedium xxl:text-[31px] hover:text-second")=jobsItemsTEXT[0][0]
+                .state(class="w-full flex flex-row")
+                    each di in jobsItemsTEXT[1]
+                        div(class="inline-block pt-2 pb-2 font-head text-semismall group")
+                            span(class="text-main border-solid group-last:border-0 border-grey7 ltr:pr-4 ltr:mr-4 ltr:border-r-1 rtl:border-l-1 rtl:pl-4 rtl:ml-4")= di
+                        
+            .cont.flex-1                        
+                h5(class="block w-full h-[70px] xl:h-[55px] ltr:xl:pr-10 rtl:xl:p-100 overflow-hidden text-font font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small mt-5 lg:mt-0 leading-normal", data-aos="fade-up", data-aos-delay="100")
+                    p=whoStrategyTEXT[1]
+
+            .btn    
+                a.btn(href=singleJobURL,class=" z-9 inline-block relative pt-3 pb-3 pr-8 pl-8 mt-5 lg:mt-0 bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group ", data-aos="fade-up", data-aos-delay="200")
+                    .before(class="bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                    span.relative.z-9=moreBtnTEXT
+    -} 

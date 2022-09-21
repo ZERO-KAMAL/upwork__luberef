@@ -1,0 +1,59 @@
+include ../_vars
+-if(is_rtl == true){
+    include ../_vars_rtl
+-}else{
+    include ../_vars_ltr
+-}
+section.clients-quotes#clientsQuotes(class="h-max w-full relative pt-28 pb-28 before:w-75p before:h-full before:absolute before:top-0 before:bg-grey6 before:content-[''] before:block ltr:before:left-0 rtl:before:right-0")
+    .main-wrapper(class="relative w-full z-9")
+        .content(class="w-full flex lg:flex-row gap-8 items-center ")            
+            div(class="w-full lg:w-col8 xl:w-col7 ltr:lg:mr-col4 ltr:xl:mr-col5 rtl:lg:ml-col4 rtl:xl:ml-col5 ")
+                h2(class="text-dark font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                    span.block(data-aos="fade-up")=clientsQuotesTEXT
+        .content(class="w-full flex lg:flex-row gap-8 items-center ")        
+            div(class="w-full lg:w-col6 xl:w-col5 ltr:lg:mr-col1 ltr:xl:mr-col2 rtl:lg:ml-col1 rtl:xl:ml-col2 mt-4 lg:mt-0")
+                
+                .w-full.quotesSlider.mt-12(data-nav=".proMum")
+                    -for(var i= 1; i < 6; i++ ){
+                        .quoteItem.w-full(class="pr-3 pl-3 pt-6 pb-6") 
+                            img(src="assets/products/uses/logo.png", alt=mainAboutTEXT class="w-[235px] block")
+                            div(class="w-full")
+                                h3(class="text-font2 font-head italic xl:text-semimedium lg:text-morenormal1 text-normal opacity-70  pt-7 mt-7 border-t-1 border-solid border-t-grey3")
+                                    |"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et olore".
+                            h4(class="text-semimedium font-head text-dark mt-12" data-aos="fade-up" data-aos-delay="100") Aramco Company     
+                            .desc(class="block w-full 2xl:text-normal xl:text-normal2 lg:text-semismall text-small2 font-normal mt-2 font-head text-font" data-aos="fade-up" data-aos-delay="300")
+                                p Head of IT
+                    -}            
+                .w-full.block.mt-12
+                    .arrows.inline-flex.mr-auto.ml-auto.w-max.items-center
+                        .prev.inline-block(data-parent=".arrows" class="cursor-pointer w-[39px] group disabled") 
+                            <svg class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" width="39.01" height="39.009" viewBox="0 0 39.01 39.009">
+                                <g data-name="Group 87405" transform="translate(0)">
+                                    <g data-name="Ellipse 13925" transform="translate(0)" fill="#f3f4f6" stroke="#1b335f" stroke-width="1.5">
+                                    <ellipse class="group-hover:fill-second group-hover:stroke-second" cx="19.505" cy="19.504" rx="18.755" ry="18.754" fill="none"/>
+                                    </g>
+                                    <path class="group-hover:stroke-white" data-name="Path 86845" d="M12270.084,6451.851l-6.568,6.568,6.568,6.568" transform="translate(-12247.227 -6438.747)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                                </g>
+                            </svg>
+                        div(class="w-[110px] h-max mr-4 ml-4 overflow-hidden")    
+                            .proMum.newsMumSlider(data-nav=".quotesSlider") 
+
+                                -for(var n = 1; n < 6 ; n++ ){        
+                                    - if(n < 10){n= "0" + n}
+                                    .numItem.h-max 
+                                        div(class="text-extranormal block font-head font-bold text-dark relative")
+                                            span.inline-block(class="pt-2 pb-2 pr-2 pl-2")=n    
+                                            span(class=" inline-block dash absolute mt-2 extranormal ltr:-right-1 rtl:-left-1") -      
+                                -}             
+                        .next.inline-block(data-parent=".arrows" class="cursor-pointer w-[39px] group ") 
+
+                            <svg class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" width="39.009" height="39.009" viewBox="0 0 39.009 39.009">
+                                <g data-name="Group 87404" transform="translate(-1059 -6755)">
+                                    <g data-name="Ellipse 13925" transform="translate(1059 6755)" fill="#f3f4f6" stroke="#1b335f" stroke-width="1.5">
+                                    <circle class="group-hover:fill-second group-hover:stroke-second" cx="19.504" cy="19.504" r="18.754" fill="none"/>
+                                    </g>
+                                    <path class="group-hover:stroke-white" data-name="Path 86845" d="M12263.516,6451.851l6.567,6.568-6.567,6.568" transform="translate(-11188.363 316.253)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                                </g>
+                            </svg>
+            .img(class="w-full lg:w-col6 xl:w-col5 mt-4 lg:mt-0")
+                img(src="assets/products/clients.jpg", class="w-full h-full object-cover", alt="clientsQuotesTEXT")

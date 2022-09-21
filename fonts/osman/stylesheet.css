@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Co Text osman';
+    src: url('CoText-Light.eot');
+    src: url('CoText-Light.eot?#iefix') format('embedded-opentype'),
+        url('CoText-Light.woff2') format('woff2'),
+        url('CoText-Light.woff') format('woff'),
+        url('CoText-Light.ttf') format('truetype'),
+        url('CoText-Light.svg#CoText-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

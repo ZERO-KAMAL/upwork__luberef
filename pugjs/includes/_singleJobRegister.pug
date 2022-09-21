@@ -1,0 +1,102 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+
+    form(class="block w-full")
+        .content.register#personalInfo(class="block w-full mt-16 pt-12")            
+            div(class="font-normal text-font 2xl:text-normal xl:text-normal2 lg:text-semismall text-small2 font-head mb-3")
+                span=RequiredFieldsTEXT
+                span.text-red.mr-2.ml-2 * 
+            div(class="w-full flex lg:flex-row pt-5 pb-5 mb-8")
+                div(class="lg:flex-1")
+                    h2(class="font-normal text-dark xxl:text-medium lg:text-morenormal text-normal1 font-body")=PersonalInfoTEXT
+                div.clear(class="flex items-center 2xl:text-normal xl:text-normal2 lg:text-semismall text-small2 text-font font-normal font-head group clear-btn cursor-pointer", data-parent="#personalInfo")
+                    span.icon(class="w-[15px] ltr:mr-2 rtl:ml-2") 
+                        <svg class="!w-full h-auto" xmlns="http://www.w3.org/2000/svg" width="15" height="16.584" viewBox="0 0 15 16.584">
+                            <g  data-name="Group 64456" transform="translate(-1287 -757.416)">
+                                <rect class=" group-hover:fill-main"  data-name="Rectangle 2328" width="13" height="9" transform="translate(1288 765)" fill="rgba(33,30,31,0.7)"/>
+                                <rect class=" group-hover:fill-main"  data-name="Rectangle 2329" width="15" height="2" transform="translate(1287 761)" fill="rgba(33,30,31,0.7)"/>
+                                <path class=" group-hover:stroke-main"  data-name="Path 78184" d="M8367.481,1575.386v-3.22h6.395v3.22" transform="translate(-7075.981 -814)" fill="none" stroke="rgba(33,30,31,0.7)" stroke-width="1.5"/>
+                            </g>
+                        </svg>
+                    span(class="group-hover:text-main")=clearTEXT
+            div(class="flex flex-wrap w-full")
+                - var m = 0, cl="" , cls=""
+                each ifeild in jobRegisterFields2TEXT
+                    -cls = ifeild[0] + "-wrapper"
+                    -if(m % 2 ==0){cl = " ltr:pr-10 rtl:pr-10"}else{cl=" rtl:pr-10 ltr:pr-10"}
+                    div(class="w-full lg:w-col6 " +cl  )
+                        div.input-wrapper(class="w-full relative mt-12 "+ cls)
+                            -if(ifeild[0] == "date"){                                
+                                input(type="text", required, onfocus="(this.type='date')" onfocusout="(this.type='text')" , class="z-3 relative bg-transparent border-0 appearance-none outline-none w-full font-head 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-font pt-1 pb-1")
+                            -}else{
+                                input(type=ifeild[0] ,required, class="z-3 relative bg-transparent border-0 appearance-none outline-none w-full font-head 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-font pt-1 pb-1")
+                            -}    
+                            label(class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-font2 absolute top-1 left-0 z-1 font-head pointer-events-none ")
+                                span.opacity-50=ifeild[1]
+                                span.text-main.mr-2.ml-2 * 
+                            .before(class="absolute bottom-0 right-0 left-0 w-auto  h-[1px] bg-grey8  ")                            
+                            -if(ifeild[0] == "email"){msg = emailErorTEXT}else{msg=errorTEXT}
+                            .error-msg(class="font-head text-small text-red absolute left-0 -bottom-[22px] hidden lg:text-[10px] lg:-bottom-[16px]")=msg    
+                    -m++   
+        .content.register#progifInfo(class="block w-full mt-16 pt-12")
+            div(class="font-normal text-font 2xl:text-normal xl:text-normal2 lg:text-semismall text-small2 font-head mb-3")
+                span=RequiredFieldsTEXT
+                span.text-red.mr-2.ml-2 * 
+            div(class="w-full flex lg:flex-row pt-5 pb-5 mb-8")
+                div(class="lg:flex-1")
+                    h2(class="font-normal text-dark xxl:text-medium lg:text-morenormal text-normal1 font-body")=ProfileTEXT
+                div.clear(class="flex items-center 2xl:text-normal xl:text-normal2 lg:text-semismall text-small2 text-font font-normal font-head group clear-btn cursor-pointer", data-parent="#progifInfo")
+                    span.icon(class="w-[15px] ltr:mr-2 rtl:ml-2") 
+                        <svg class="!w-full h-auto" xmlns="http://www.w3.org/2000/svg" width="15" height="16.584" viewBox="0 0 15 16.584">
+                            <g  data-name="Group 64456" transform="translate(-1287 -757.416)">
+                                <rect class=" group-hover:fill-main"  data-name="Rectangle 2328" width="13" height="9" transform="translate(1288 765)" fill="rgba(33,30,31,0.7)"/>
+                                <rect class=" group-hover:fill-main"  data-name="Rectangle 2329" width="15" height="2" transform="translate(1287 761)" fill="rgba(33,30,31,0.7)"/>
+                                <path class=" group-hover:stroke-main"  data-name="Path 78184" d="M8367.481,1575.386v-3.22h6.395v3.22" transform="translate(-7075.981 -814)" fill="none" stroke="rgba(33,30,31,0.7)" stroke-width="1.5"/>
+                            </g>
+                        </svg>
+                    span(class="group-hover:text-main")=clearTEXT
+            div(class="flex flex-wrap w-full")
+                - var m = 0, cl="" , cls=""
+                each ifeild in jobRegisterFields3TEXT
+                    -cls = ifeild[0] + "-wrapper"
+                    -if(m % 2 ==0){cl = " ltr:pr-10 rtl:pr-10"}else{cl=" rtl:pr-10 ltr:pr-10"}
+                    div(class="w-full lg:w-col6 " +cl  )
+                        div.input-wrapper(class="w-full relative mt-12 "+ cls)
+                            -if(ifeild[0] == "date"){                                
+                                input(type="text", required, onfocus="(this.type='date')" onfocusout="(this.type='text')" , class="z-3 relative bg-transparent border-0 appearance-none outline-none w-full font-head 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-font pt-1 pb-1")
+                            -}else{
+                                input(type=ifeild[0] ,required, class="z-3 relative bg-transparent border-0 appearance-none outline-none w-full font-head 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-font pt-1 pb-1")
+                            -}    
+                            label(class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-font2 absolute top-1 left-0 z-1 font-head pointer-events-none ")
+                                span.opacity-50=ifeild[1]
+                                span.text-main.mr-2.ml-2 * 
+                            .before(class="absolute bottom-0 right-0 left-0 w-auto  h-[1px] bg-grey8  ")                            
+                            -if(ifeild[0] == "email"){msg = emailErorTEXT}else{msg=errorTEXT}
+                            .error-msg(class="font-head text-small text-red absolute left-0 -bottom-[22px] hidden lg:text-[10px] lg:-bottom-[16px]")=msg    
+                    -m++
+        .content.register(class="block w-full mt-16")                            
+                div(class="w-full" )
+                    div.input-wrapper(class="w-full relative mt-7")
+                        label(class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small block text-font relative mb-3 z-3 font-head pointer-events-none ")
+                            span=ResumeTEXT
+                        div#upload-area(class="relative w-full !min-h-[117px] table text-white text-center upload-area m-0 bg-grey5 border-1 border-dashed border-grey8 pt-9 pb-9", data-file-textcolor="font", data-file-bgcolor="grey7")
+                            .up-content.w-full.h-full.table-cell.align-middle.text-center    
+                                input(type="file",name="files",  class="absolute top-0 left-0 w-full h-full z-9 cursor-pointer opacity-0 outline-0")
+                                .icon-area(class="w-100 relative block text-center xl:text-morenormal1 text-normal font-head")
+                                    div(class="hidden w-full mt-3 mb-3 text-font up-drop-here")=dropHereTEXT
+                                    div(class="w-full mt-3 mb-3 up-drag")
+                                        span.text-main= uploadTEXT[0]                       
+                                        span.text-font= uploadTEXT[1]             
+                                    
+                        div(class="w-full mt-5 text-center error hidden")
+                            span(class="text-red font-bold")=invalidFileTEXT 
+                        .w-full.files
+                div(class="w-full " )
+                    div.input-wrapper(class="w-full relative mt-7 text-center")
+                        button.btn(class="appearance-none outline-0 border-0 relative z-9 inline-block pt-3 pb-3 pr-8 pl-8 mt-12 mr-auto ml-auto bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group", type="submit" ,data-aos="fade-up", data-aos-delay="200")
+                                .before(class=" bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                                span.relative.z-9=applyNowTEXT    

@@ -1,0 +1,20 @@
+
+extends index.pug
+block title
+    title= title  + " | " + baseOilHeadTEXT[1] 
+block mainContent
+    -headMainTitleTop = bottomNavTEXT[1]
+    -headMainTitle = baseOilHeadTEXT[0]
+    -headMainDesc = baseOilHeadTEXT[1]
+    - bgObject = "image"
+    -headMainImg = "../assets/headers/base-oil.jpg"
+    include includes/_mainHeader
+    - subFactsTEXT = whoFactsTEXT
+    - subFactsDesc = whoFactsDesc
+    - allSubFactsTEXT = whoAllFactsTEXT
+    include includes/_mainFacts               
+    include includes/products/_proProducts               
+    include includes/products/_productUses               
+    include includes/products/_clientsQuotes             
+    include includes/_mainFaqs                       
+    include includes/_mainContact                       

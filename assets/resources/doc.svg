@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="53.106" height="60.692" viewBox="0 0 53.106 60.692">
+  <g id="pdf" transform="translate(0)">
+    <path id="Path_1040" data-name="Path 1040" d="M99.793,0A3.8,3.8,0,0,0,96,3.793V56.9a3.8,3.8,0,0,0,3.793,3.793h37.933a3.8,3.8,0,0,0,3.793-3.793V15.173L126.346,0Z" transform="translate(-88.414)" fill="#eee"/>
+    <path id="Path_1041" data-name="Path 1041" d="M355.793,15.173h11.38L352,0V11.38A3.8,3.8,0,0,0,355.793,15.173Z" transform="translate(-314.068)" fill="#b0b7bd"/>
+    <path id="Path_1042" data-name="Path 1042" d="M395.38,139.38,384,128h11.38Z" transform="translate(-342.274 -112.827)" fill="#e9ecef"/>
+    <path id="Path_1043" data-name="Path 1043" d="M77.519,260.863a1.9,1.9,0,0,1-1.9,1.9H33.9a1.9,1.9,0,0,1-1.9-1.9V241.9a1.9,1.9,0,0,1,1.9-1.9H75.623a1.9,1.9,0,0,1,1.9,1.9Z" transform="translate(-32 -211.551)" fill="#6fb455"/>
+    <path id="Path_1047" data-name="Path 1047" d="M132.036,417.9H96v1.9h36.036a1.9,1.9,0,0,0,1.9-1.9V416A1.9,1.9,0,0,1,132.036,417.9Z" transform="translate(-88.414 -366.688)" fill="#cad1d8"/>
+    <text id="DOC" transform="translate(7.553 44.346)" fill="#fff" font-size="13" font-family="Verdana-Bold, Verdana" font-weight="700"><tspan x="0" y="0">DOC</tspan></text>
+  </g>
+</svg>

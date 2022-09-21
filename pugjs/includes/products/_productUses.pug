@@ -1,0 +1,28 @@
+include ../_vars
+-if(is_rtl == true){
+    include ../_vars_rtl
+-}else{
+    include ../_vars_ltr
+-}
+section.productuses#productUses(class="h-max w-full relative pt-28 pb-28")
+    .main-wrapper(class="relative w-full z-9")
+        .content(class="w-full flex flex-wrap items-center ")            
+            div(class="w-full lg:w-col8 xl:w-col7 mt-4")
+                h2(class="text-dark font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                    span.block(data-aos="fade-up")=productUsesTEXT[0]
+                h5(class="block w-full text-font font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small leading-6 mt-5" data-aos="fade-up" data-aos-delay="100")
+                    p=productUsesTEXT[1]       
+        .content(class="w-full flex flex-wrap mt-12")
+            -var i = 0
+            each pui in productUsesItmsTEXT
+                - if(i%2 == 0){cls = "ltr:md:pr-6 rtl:md:pl-6"}else{cls="rtl:md:pr-6 ltr:md:pl-6"}    
+                div(class="w-full md:w-col6 mt-6 " + cls)         
+                    .proUseItem.w-full
+                        a.wrapper(href="#" class="w-full block relative group")
+                            .img(class="block w-full rect-size overflow-hidden")
+                                img(src=pui[0], alt=pui[1], class="w-full h-full object-cover trans group-hover:scale-125")
+
+                            .cont(class=" border-t-3 border-solid border-t-[" + pui[3] +"] pt-5 pb-5") 
+                                .ti(class="block w-full xxl:text-medium lg:text-morenormal text-normal font-normal font-body text-dark trans hover:text-main" data-aos="fade-up")=pui[1] 
+                                    .desc(class="block w-full mt-5 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal  font-head text-font" data-aos="fade-up" )=pui[2]     
+                -i++                

@@ -1,0 +1,37 @@
+include ../_vars
+-if(is_rtl == true){
+    include ../_vars_rtl
+-}else{
+    include ../_vars_ltr
+-}
+section.main-about#mainAbout(class="min-h-screen w-full overflow-hidden table relative pt-36 pb-36 bg-base-products bg-fixed bg-no-repeat bg-cover")
+    .before(class="absolute w-full h-full left-0 top-0 ltr:bg-base-oil rtl:bg-base-oil-rtl opacity-90 z-3 object-cover")                    
+    .main-wrapper(class="relative w-full table-cell z-9 align-middle")
+        .content(class="w-full lg:w-col7 xl:w-col6")
+            div(class="w-full")
+                h1(class="text-white font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                    span.block(data-aos="fade-up")=baseProductsTEXT[0]
+            div(class="w-full mt-7 pb-12")            
+                h5(class="block w-full text-white font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small", data-aos="fade-up")
+                    p=baseProductsTEXT[1]
+            div(class="w-full sub-products block mt-16")
+                .haed(class="flex flex-row 2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-white opacity-50 font-normal")
+                    .right(class="w-col6 ltr:text-left rtl:text-right")
+                        span=productTEXT    
+                    .left(class="w-col6 ltr:text-right rtl:text-left")
+                        span=TechnicalDownTEXT  
+                .downloadAllProducts.w-full.mt-5 
+                    each sbd in subProductsItemsTEXT
+                        a.downProduct(href="#", download,class="w-full flex items-center group text-white text-morenormal pt-3 pb-3 relative before:content-['']  before:absolute before:w-full before:h-[1px] before:bottom-0 before:left-0 before:bg-white before:opacity-25 before:block last:before:hidden")
+                            .proTi(class="flex-1 group-hover:text-second")
+                                span=sbd
+                            .proDown(class="w-max")
+                                span(class="w-[17px] h-[17px] ltr:float-right rtl:float-left") 
+                                    <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="19.665" height="19.665" viewBox="0 0 19.665 19.665">
+                                        <g data-name="Group 43222" transform="translate(-3.5 -3.5)">
+                                            <path class="group-hover:stroke-second" data-name="Path 38067" d="M22.165,22.5v3.926A1.963,1.963,0,0,1,20.2,28.388H6.463A1.963,1.963,0,0,1,4.5,26.426V22.5" transform="translate(0 -6.223)" fill="none" stroke="#efb844" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                            <path class="group-hover:stroke-second" data-name="Path 38068" d="M10.5,15l4.907,4.907L20.314,15" transform="translate(-2.074 -3.63)" fill="none" stroke="#efb844" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                            <path class="group-hover:stroke-second" data-name="Path 38069" d="M18,16.277V4.5" transform="translate(-4.667)" fill="none" stroke="#efb844" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                        </g>
+                                    </svg>
+

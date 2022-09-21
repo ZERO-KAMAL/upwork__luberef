@@ -1,0 +1,43 @@
+include includes/_vars
+-if(is_rtl == true){
+    include includes/_vars_rtl
+-}else{
+    include includes/_vars_ltr
+-}
+doctype
+html(lang="en" dir="ltr" class="ltr")
+    include includes/_header
+    body(class="font-body nice-scroll-bar")       
+        //div(class="loader")
+            img(src="images/big-logo.svg" alt="loader_logo", class="lg:w-[50vw]")
+        include includes/_topBar
+        block mainContent
+            
+            -headMainTitle = headerTEXT
+            -headMainDesc = headerDesc
+            -bgObject = "video"
+            -showScroll = true
+            include includes/_mainHeader
+            - var overviewSecTitle = mainOverviewTEXT
+            - var overviewSecDesc = [mainOverviewDesc[0] ,mainOverviewDesc[1] ]
+            - var overviewSecImg = "assets/overview.jpg"
+            - var showBtn = true
+            include includes/_mainOverview
+            - var subFactsTEXT = mainFactsTEXT
+            - var subFactsDesc = mainFactsDesc
+            - var allSubFactsTEXT = allFactsTEXT
+            include includes/_mainFacts
+            include includes/_mainProducts
+            include includes/_mainAbout
+            include includes/_mainSustainability
+            include includes/_latestNews
+            include includes/_mainContact
+            
+            
+
+        include includes/_mainfooter
+        block js
+            include includes/_js
+
+
+

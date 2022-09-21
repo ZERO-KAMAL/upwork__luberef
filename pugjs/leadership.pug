@@ -1,0 +1,116 @@
+
+extends index.pug
+block title
+    title= title + " | " + whoLeadershipTEXT[0]
+block mainContent
+    -headMainTitleTop = AboutLuberefTEXT[0]
+    -headMainTitle = whoLeadershipTEXT[0]
+    -headMainDesc = whoLeadershipTEXT[1]
+    - bgObject = "image"
+    -headMainImg = "../assets/headers/leadership.jpg"
+    include includes/_mainHeader
+    .popup.block(id="popupMainDirector",class="fixed w-screen h-screen before:absolute top-0 left-0 before:w-full before:h-full before:bg-black before:opacity-50 before:z-1")
+        .popup-wrapper(class="block h-full w-90p ml-[5%] lg:w-70p lg:ml-[15%] z-9 pt-8 pb-8 relative")
+            .popup-container(class="w-full h-full overflow-y-scroll nice-scroll-bar m-auto bg-white animate__animated animate__fadeInUp")
+                .popup-header.w-full.p-12 
+                    .popup-close.inline-block(class="ltr:float-right rtl:float-left")
+                        .btn-more(data-popup="#popupMainDirector", class="inline-flex text-small font-bold font-body uppercase items-center group close-popup")
+                            span(class="text-main inline-block ltr:mr-6 rtl:ml-6 group-hover:text-second ltr:group-hover:mr-6 rtl:group-hover:ml-6 trans")=closeTEXT
+                            span(class="inline-block arrow-right w-[25px] h-[25px]")
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28.8" height="28.8" viewBox="0 0 28.8 28.8">
+                                    <g data-name="Group 87435" transform="translate(-1522.385 -1113.251)">
+                                        <path class="stroke-main group-hover:stroke-second" data-name="Path 86869" d="M14148.771,925.666l-25.972,25.972" transform="translate(-12599 189)" fill="none" stroke="#099bd6" stroke-linecap="round" stroke-width="2"/>
+                                        <path class="stroke-main group-hover:stroke-second" data-name="Path 86870" d="M14122.8,925.666l25.972,25.972" transform="translate(-12599.001 189)" fill="none" stroke="#099bd6" stroke-linecap="round" stroke-width="2"/>
+                                    </g>
+                                </svg>
+
+
+                .popup-body.w-full.p-16 
+                    .dirctorMainItem.mt-6.row-wrapper.w-full(class="w-full flex lg:flex-row gap-9 items-start")                           
+                        div(class="w-full lg:w-col6 xl:w-col5 xxl:w-[445px] overflow-hidden sqaure-size")
+                            img.block(src=src=leadershipDirector1TEXT[0], alt=leadershipDirector1TEXT[1], class="w-full h-full object-cover") 
+                        div(class="w-full lg:w-col6 xl:w-col7 xxl:w-col6 pr-5 pl-5 pt-1 pb-1 xl:pt-0 xl:pb-0")
+                            .w-full.block
+                                h3(class="xxl:text-medium lg:text-morenormal text-normal font-body text-dark" data-aos="fade-up")=leadershipDirector1TEXT[1]            
+                                h4(class="xl:text-semimedium lg:text-morenormal1 text-normal font-body text-font mt-2" data-aos="fade-up" data-aos-delay="100")=leadershipDirector1TEXT[2]     
+                                .desc(class="block w-full mt-5 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal leading-[30px] font-head text-font" data-aos="fade-up" data-aos-delay="300")
+                                    p=leadershipDirector1TEXT[3]                                    
+                                    p=leadershipDirector1TEXT[3]                                    
+                .popup-footer.w-full(class="bg-dark text-white") 
+                    .w-full.d-block(class="w-full xl:w-col6 ltr:xl:ml-col6 rtl:xl:mr-col6 xxl:w-col4 ltr:xxl:ml-col8 rtl:xxl:ml-col8 ltr:lg:text-right rtl:lg:text-left p-12")
+                        .next(class="text-small text-second font-head mb-2")= nextTEXT
+                        h3(class="text-morenormal font-body " data-aos="fade-up")=leadershipDirectorsTEXT[0][1]            
+                        h4(class="xl:text-morenormal1 text-normal font-body text-grey3 mt-2" data-aos="fade-up" data-aos-delay="100")=leadershipDirectorsTEXT[0][2]     
+                                                    
+
+
+
+    section.main-leadership#mainLeadership(class="h-max w-full relative pt-28 pb-9")
+        .main-wrapper(class="relative w-full z-9")
+            .content(class="block")
+                #leadershipTabs.nav-tabs.mb-12(role='tablist' class="w-max m-auto flex lg:flex-row text-center gap-3  text-center")                    
+                    #home-tab.btn.nav-link.active(data-tab-target='#directors' data-tab-parent="#leadershipTabsContent" role='tab' aria-selected='true' class="cursor-pointer inline-block m-auto xxl:min-w-[344px] font-body bg-main relative pt-3 pb-3 pr-8 pl-8 mt-12 bg-white text-dark uppercase xl:text-morenormal text-normal font-normal group hover:text-white" data-aos="fade-up" data-aos-delay="200")                            
+                        .before(class="bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                        span.relative.z-9=leadershipTabsTEXT[0]
+
+                    #management-tab.btn.nav-link(data-tab-target='#management' data-tab-parent="#leadershipTabsContent" role='tab' aria-selected='false' class="cursor-pointer inline-block m-auto xxl:min-w-[344px] font-body bg-main relative pt-3 pb-3 pr-8 pl-8 mt-12 bg-white text-dark uppercase xl:text-morenormal text-normal font-normal group hover:text-white" data-aos="fade-up" data-aos-delay="200")
+                        .before(class="bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                        span.relative.z-9=leadershipTabsTEXT[1]
+
+                #leadershipTabsContent.tabs-content
+                    #directors.tab-pane.block(role='tabpanel' class="w-full pt-4 pb-4 active" )
+                        .tab-wrapper.w-full(class="w-full pt-5 pb-5")
+                            .dirctorMainItem.mt-6.row-wrapper.w-full(class="w-full flex lg:flex-row gap-9 lg:items-start xl:items-center")                           
+                                div(class="w-full lg:w-col6 xl:w-col5 xxl:w-[445px] overflow-hidden sqaure-size")
+                                    img.block(src=src=leadershipDirector1TEXT[0], alt=leadershipDirector1TEXT[1], class="w-full h-full object-cover") 
+                                div(class="w-full lg:w-col6 xl:w-col7 xxl:w-col6 p-5")
+                                    .w-full.block
+                                        h3(class="xxl:text-medium lg:text-morenormal text-normal font-body text-dark" data-aos="fade-up")=leadershipDirector1TEXT[1]            
+                                        h4(class="xl:text-semimedium lg:text-morenormal1 text-normal font-body text-font mt-2" data-aos="fade-up" data-aos-delay="100")=leadershipDirector1TEXT[2]     
+                                        .desc(class="block w-full mt-5 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal leading-[30px] font-head text-font" data-aos="fade-up" data-aos-delay="300")
+                                            p=leadershipDirector1TEXT[3]                                    
+                                        .btn-more(data-popup="#popupMainDirector", class="inline-flex 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-body uppercase items-center mt-8 group open-popup")
+                                            span(class="inline-block ltr:mr-3 rtl:ml-3 group-hover:text-main ltr:group-hover:mr-6 rtl:group-hover:ml-6 trans")=readBioTEXT
+                                            span(class="inline-block arrow-right w-2")
+                                                <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="8.52" height="14.21" viewBox="0 0 8.52 14.21">
+                                                    <path class="group-hover:stroke-main trans" data-name="Path 99277" d="M123.145,571.616l5.691,5.691L123.145,583" transform="translate(-121.73 -570.202)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                                                </svg>         
+                            .row-wrapper.w-full(class="w-full flex flex-wrap items-start mt-12") 
+                                each lds in leadershipDirectorsTEXT
+                                    div(class="w-full md:w-col6 lg:w-col4 xl:w-col2-4 ltr:pr-10 rtl:pl-10")
+                                        .dirctorItem.w-full.mt-8.pb-8    
+                                            .wrap(class="w-full block")    
+                                                div(class="w-full sqaure-size")                                                    
+                                                    img.block(src=src=lds[0], alt=lds[1], class="w-full h-full object-cover") 
+                                                .w-full.flex.flex-col.pt-8
+                                                    h3(class="text-morenormal font-body text-dark leading-8" data-aos="fade-up")=lds[1]            
+                                                    h4(class="xl:text-morenormal1 text-normal font-body text-font mt-2" data-aos="fade-up" data-aos-delay="100")=lds[2]    
+                                                                         
+                                                    .btn-more(data-popup="#popupMainDirector", class="inline-flex 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-body uppercase items-center mt-7 group open-popup")
+                                                        span(class="text-dark inline-block ltr:mr-3 rtl:ml-3 group-hover:text-main ltr:group-hover:mr-6 rtl:group-hover:ml-6 trans")=readBioTEXT
+                                                        span(class="inline-block arrow-right w-2")
+                                                            <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="8.52" height="14.21" viewBox="0 0 8.52 14.21">
+                                                                <path class="group-hover:stroke-main trans" data-name="Path 99277" d="M123.145,571.616l5.691,5.691L123.145,583" transform="translate(-121.73 -570.202)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                                                            </svg>        
+                    #management.tab-pane.block(role='tabpanel' class="w-full pt-4 pb-4")
+                        .tab-wrapper.w-full(class="w-full pt-5 pb-5")
+                            .row-wrapper.w-full(class="w-full flex flex-wrap items-start mt-12") 
+                                each lds in leadershipDirectorsTEXT
+                                    div(class="w-full md:w-col6 lg:w-col4 xl:w-col2-4 ltr:pr-10 rtl:pl-10")
+                                        .dirctorItem.w-full.mt-8.pb-8    
+                                            .wrap(class="w-full block")    
+                                                div(class="w-full sqaure-size")                                                    
+                                                    img.block(src=src=lds[0], alt=lds[1], class="w-full h-full object-cover") 
+                                                .w-full.flex.flex-col.pt-8
+                                                    h3(class="text-morenormal font-body text-dark leading-8" data-aos="fade-up")=lds[1]            
+                                                    h4(class="xl:text-morenormal1 text-normal font-body text-font mt-2" data-aos="fade-up" data-aos-delay="100")=lds[2]    
+                                                                         
+                                                    .btn-more(data-popup="#popupMainDirector", class="inline-flex 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-body uppercase items-center mt-7 group open-popup")
+                                                        span(class="text-dark inline-block ltr:mr-3 rtl:ml-3 group-hover:text-main ltr:group-hover:mr-6 rtl:group-hover:ml-6 trans")=readBioTEXT
+                                                        span(class="inline-block arrow-right w-2")
+                                                            <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="8.52" height="14.21" viewBox="0 0 8.52 14.21">
+                                                                <path class="group-hover:stroke-main trans" data-name="Path 99277" d="M123.145,571.616l5.691,5.691L123.145,583" transform="translate(-121.73 -570.202)" fill="none" stroke="#1b335f" stroke-linecap="round" stroke-width="2"/>
+                                                            </svg>        
+
+    include includes/_latestNews
+    include includes/_mainContact                       

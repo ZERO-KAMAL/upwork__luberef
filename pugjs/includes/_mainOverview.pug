@@ -1,0 +1,23 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+section.main-overview#mainOverview(class="h-max w-full relative pt-28")
+    .main-wrapper(class="relative w-full z-9")
+        .content(class="flex items-start gap-7")
+            div(class="w-full md:w-col5")
+                h2(class="text-dark font-body mt-3 font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                    span.block(data-aos="fade-up")=overviewSecTitle
+            div(class="w-full md:w-col7")            
+                h5(class="block w-full text-font font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small")
+                    each osd in overviewSecDesc
+                        p=osd
+                -if(showBtn == true){
+                    a.btn(href=aboutURL,class="inline-block relative pt-3 pb-3 pr-8 pl-8 mt-12 bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group")
+                        .before(class=" bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                        span.relative.z-9=moreBtnTEXT
+                -}        
+    .about-img(class="block w-full relative before:content-[''] before:w-full before:h-300 before:absolute before:block before:z-2 before:top-0 before:bg-img-cover-white -mt-24 z-4")
+        img.w-full.block(src=overviewSecImg, alt=overviewSecTitle)        

@@ -1,0 +1,38 @@
+include ../_vars
+-if(is_rtl == true){
+    include ../_vars_rtl
+-}else{
+    include ../_vars_ltr
+-}
+section.whoweare-about#whoweareAbout(class="h-screen w-full overflow-hidden table relative pt-28 pb-28 bg-whoweare-1 bg-fixed bg-no-repeat bg-cover")
+    .before(class="absolute w-full h-full top-0 left-0 object-cover bg-black opacity-90 z-1")                    
+    .main-wrapper(class="relative w-full table-cell z-9 align-middle")
+        .content(class="w-full flex lg:flex-row text-center")
+            div(class="w-full lg:w-col8 xl:w-col6 m-auto")
+                .whoAboutItem.w-full 
+                    .wrapper.w-full 
+                        .icon(class="w-14 h-14 rounded-full table mr-auto ml-auto -mt-11", data-aos="fade-up") 
+                            .icon-img.table-cell.w-full.h-full.align-middle
+                                img(src=whoAboutItemsTEXT[0][0], alt=whoAboutItemsTEXT[0][1] ,class="w-full", data-aos="zoom-in", data-aos-delay="300")
+                        .cont.pt-5.pb-5 
+                            .ti(class="block w-full text-moremedium xxl:text-semiextramedium lg:text-moremedium font-normal font-body text-white", data-aos="fade-up",  data-aos-delay="200")=whoAboutItemsTEXT[0][1]    
+                            .desc(class="block w-full mt-5 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal leading-6 font-head text-white", data-aos="fade-up",  data-aos-delay="300")=whoAboutItemsTEXT[0][2]
+        .content(class="w-full flex lg:flex-row text-center")
+            div(class="w-full lg:w-col6 m-auto")
+                .whoAboutItem.half(class="w-full block mt-16") 
+                    .wrapper.w-full(class="p-5 relative before:border-solid before:border-grey4 before:border-1 before:absolute before:w-full before:h-full before:top-0 before:left-0 before:opacity-30") 
+                        .icon(class="w-14 h-14 rounded-full table mr-auto ml-auto -mt-11", data-aos="fade-up") 
+                            .icon-img.table-cell.w-full.h-full.align-middle
+                                img(src=whoAboutItemsTEXT[1][0], alt=whoAboutItemsTEXT[1][1] ,class="w-full", data-aos="zoom-in", data-aos-delay="300")
+                        .cont.pt-5.pb-5 
+                            .ti(class="block w-full text-moremedium xxl:text-semiextramedium lg:text-moremedium font-normal font-body text-white", data-aos="fade-up",  data-aos-delay="200")=whoAboutItemsTEXT[1][1]    
+                            .desc(class="block w-full mt-5 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal leading-6 font-head text-white", data-aos="fade-up",  data-aos-delay="300")=whoAboutItemsTEXT[1][2]
+            div(class="w-full lg:w-col6 m-auto")
+                .whoAboutItem.half(class="w-full block mt-16") 
+                    .wrapper.w-full(class="p-5 relative before:border-solid before:border-grey4 before:border-1 before:absolute before:w-full before:h-full before:top-0 before:left-0 before:opacity-30") 
+                        .icon(class="w-14 h-14 rounded-full table mr-auto ml-auto -mt-11", data-aos="fade-up") 
+                            .icon-img.table-cell.w-full.h-full.align-middle
+                                img(src=whoAboutItemsTEXT[2][0], alt=whoAboutItemsTEXT[2][1] ,class="w-full", data-aos="zoom-in", data-aos-delay="300")
+                        .cont.pt-5.pb-5 
+                            .ti(class="block w-full text-moremedium xxl:text-semiextramedium lg:text-moremedium font-normal font-body text-white", data-aos="fade-up",  data-aos-delay="200")=whoAboutItemsTEXT[2][1]    
+                            .desc(class="block w-full mt-5 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal leading-6 font-head text-white", data-aos="fade-up",  data-aos-delay="300")=whoAboutItemsTEXT[2][2]

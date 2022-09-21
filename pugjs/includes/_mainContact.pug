@@ -1,0 +1,20 @@
+include _vars
+-if(is_rtl == true){
+    include _vars_rtl
+-}else{
+    include _vars_ltr
+-}
+section.main-contact#mainContact(class="h-max w-full relative pt-8 pb-8")
+    .main-wrapper(class="relative w-full z-9")
+        .content(class="w-full flex flex-wrap items-center p-10 ltr:bg-main-contact rtl:bg-main-contact-rtl text-white")            
+            div(class="w-full lg:w-col8 xl:w-col7")
+                h1(class="font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                    span.block(data-aos="fade-up")=mainContactTEXT
+                h5(class="block w-full font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small leading-6 mt-5", data-aos="fade-up", data-aos-delay="100")
+                    p=mainContactDesc    
+            div(class="w-full lg:w-col4 xl:w-col5 mt-4 lg:mt-0")        
+                a.btn(href=contactURL,class="inline-block relative pt-3 pb-3 pr-8 pl-8 bg-white text-dark uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal hover:text-white group ltr:lg:float-right rtl:lg:foat-left", data-aos="fade-up", data-aos-delay="200")
+                    .before(class=" bg-main w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                    span.relative.z-9=mainContactTEXT          
+                
+        

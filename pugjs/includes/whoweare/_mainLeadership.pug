@@ -1,0 +1,25 @@
+include ../_vars
+-if(is_rtl == true){
+    include ../_vars_rtl
+-}else{
+    include ../_vars_ltr
+-}
+section.main-strategy#mainStrategy(class="h-max w-full relative pt-28 pb-28")
+    .main-wrapper(class="relative w-full z-9")
+        .content(class="flex lg:flex-row gap-14 lg:items-start xxl:items-center")
+            div(class="w-full lg:w-col6 xl:w-col5 overflow-hidden sqaure-size")
+                img.block(src=src="assets/whoweare/Alnuaim.jpg", alt=whoLeadershipTEXT[0], class="w-full h-full object-cover") 
+            div(class="w-full lg:w-col6 xl:w-col7 pt-5 pb-5")
+                h2(class="text-dark font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                    span.block(data-aos="fade-up")=whoLeadershipTEXT[0]
+                h3(class="block w-full text-font font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small leading-6 mt-5", data-aos="fade-up", data-aos-delay="100")
+                    p=whoLeadershipTEXT[1]    
+                .quote.w-full.block.mt-16 
+                    img(src="assets/whoweare/quotes.svg", alt=whoLeadershipTEXT[0], data-aos="fade-up")
+                    h2(class="block w-full text-dark font-head font-normal xl:text-semimedium lg:text-morenormal1 text-normal leading-[34px] mt-5", data-aos="fade-up", data-aos-delay="100")
+                        p=whoLeadershipQuote[0] 
+                    h3(class="text-morenormal font-body text-dark mt-14", data-aos="fade-up")=whoLeadershipQuote[1]            
+                    h4(class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-body text-font mt-2", data-aos="fade-up", data-aos-delay="100")=whoLeadershipQuote[2]     
+                    a.btn(href=leadershipURL,class="inline-block relative pt-3 pb-3 pr-8 pl-8 mt-16 bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group", data-aos="fade-up", data-aos-delay="200")
+                        .before(class=" bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                        span.relative.z-9=moreBtnTEXT          

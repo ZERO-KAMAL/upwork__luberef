@@ -1,0 +1,39 @@
+
+extends index.pug
+block title
+    title= title  + " | " + baseOilHeadTEXT[1] 
+block mainContent     
+    section.single-job#singleJob(class="h-max w-full relative pt-28 pb-28 mt-[100px]")
+        .main-wrapper(class="relative w-full z-9")
+            .single-job-details(class="relative w-full lg:w-col8 ltr:lg:ml-col2 rtl:lg:mr-col2")
+                .content(class="d-block w-full")
+                    .jobHead(class="w-full flex lg:flex-row items-center gap-8 ")
+                        .details(class="w-full flex-1")
+                            h1.ti(class="w-full block text-dark xlx:text-huge xl:text-extramedium lg:text-semiextramedium text-moremedium2")=jobsItemsTEXT[0][0]
+                            .state(class="w-full flex flex-row")
+                                each di in jobsItemsTEXT[1]
+                                    div(class="inline-block pt-2 pb-2 font-head text-semismall group")
+                                        span(class="text-main border-solid group-last:border-0 border-grey7 ltr:pr-4 ltr:mr-4 ltr:border-r-1 rtl:border-l-1 rtl:pl-4 rtl:ml-4")= di
+
+                        .btn    
+                            a.btn(href=applyToJobURL,class=" z-9 inline-block relative pt-3 pb-3 pr-8 pl-8 mt-5 lg:mt-0 bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group " data-aos="fade-up" data-aos-delay="200")
+                                .before(class="bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                                span.relative.z-9=applyNowTEXT
+                .content.description(class="d-block w-full mt-16")                
+                    h2(class="font-normal text-dark text-morenormal font-body capitalize mb-5")=descriptionTEXT[0]
+                    div(class="font-normal text-font 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-head")
+                        p=descriptionTEXT[1]
+                .content.description(class="d-block w-full mt-16")                
+                    h2(class="font-normal text-dark text-morenormal font-body capitalize mb-5")=RequirementsTEXT[0]
+                    div(class="font-normal text-font 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-head")
+                        p=RequirementsTEXT[1][0]
+                        p=RequirementsTEXT[1][1]
+                        p=RequirementsTEXT[1][2]
+                .content 
+                    div(class="w-full text-center")
+                        a.btn(href=applyToJobURL,class=" z-9 inline-block relative pt-3 pb-3 pr-8 pl-8 mt-16 mr-auto ml-auto  bg-main text-white uppercase 2xl:text-normal xl:text-normal2 lg:text-small text-small font-normal group " data-aos="fade-up" data-aos-delay="200")
+                            .before(class="bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                            span.relative.z-9=applyNowTEXT        
+
+    include includes/_mainContact
+

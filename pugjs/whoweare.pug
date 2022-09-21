@@ -1,0 +1,21 @@
+
+extends index.pug
+block title
+    title= title + " | " + bNavLink1TEXT[0][0]
+block mainContent
+    -headMainTitleTop = AboutLuberefTEXT[0]
+    -headMainTitle = bNavLink1TEXT[0][0]
+    -headMainDesc = AboutLuberefTEXT[1]
+    - bgObject = "image"
+    -headMainImg = "../assets/headers/whoweare.jpg"
+    include includes/_mainHeader
+    - subFactsTEXT = whoFactsTEXT
+    - subFactsDesc = whoFactsDesc
+    - allSubFactsTEXT = whoAllFactsTEXT
+    include includes/_mainFacts                         
+    include includes/whoweare/_whoweareAbout                         
+    include includes/whoweare/_mainStrategy                         
+    include includes/whoweare/_mainLeadership    
+    include includes/whoweare/_whoweareHistory    
+    include includes/_discoverMore
+    include includes/_mainContact                       

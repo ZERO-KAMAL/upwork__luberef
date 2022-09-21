@@ -1,0 +1,190 @@
+
+extends index.pug
+block title
+    title= title + " | " + LubehubTEXT[0]
+block mainContent
+    .popup.block(id="popupInvestment",class="fixed w-screen h-screen before:absolute top-0 left-0 before:w-full before:h-full before:bg-black before:opacity-50 before:z-1")
+        .popup-wrapper(class="block h-full w-90p ml-[5%] z-9 pt-8 pb-8 relative")
+            .popup-container(class="w-full h-full overflow-y-scroll nice-scroll-bar m-auto bg-white animate__animated animate__fadeInUp")
+                .popup-header.w-full.p-12 
+                    .popup-close.inline-block(class="ltr:float-right rtl:float-left")
+                        .btn-more(data-popup="#popupInvestment", class="inline-flex text-small font-bold font-body uppercase items-center group close-popup")
+                            span(class="text-main inline-block ltr:mr-6 rtl:ml-6 group-hover:text-second ltr:group-hover:mr-6 rtl:group-hover:ml-6 trans")=closeTEXT
+                            span(class="inline-block arrow-right w-[25px] h-[25px]")
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28.8" height="28.8" viewBox="0 0 28.8 28.8">
+                                    <g data-name="Group 87435" transform="translate(-1522.385 -1113.251)">
+                                        <path class="stroke-main group-hover:stroke-second" data-name="Path 86869" d="M14148.771,925.666l-25.972,25.972" transform="translate(-12599 189)" fill="none" stroke="#099bd6" stroke-linecap="round" stroke-width="2"/>
+                                        <path class="stroke-main group-hover:stroke-second" data-name="Path 86870" d="M14122.8,925.666l25.972,25.972" transform="translate(-12599.001 189)" fill="none" stroke="#099bd6" stroke-linecap="round" stroke-width="2"/>
+                                    </g>
+                                </svg>
+                .popup-body.w-full.p-16 
+                    .w-full.block.row
+                        h3(class="xxl:text-extramedium lg:text-moremedium2 text-moremedium text-dark font-body w-full block")=blendingTEXT[0]  
+                        .cont(class="2xl:text-normal xl:text-normal2 lg:text-semismall text-small text-font font-body pt-9 w-full styled-ul")        
+                            ul 
+                                each m in blendingTEXT[1]
+                                    li= m           
+
+                    .w-full.block.row.mt-12 
+                        h3(class="text-semimedium text-dark font-body")=investFactsTEXT[0] 
+                        .invfacts(class="w-full flex flex-wrap")
+                            each infa in investFactsTEXT[1]
+                                .infactItem(class="w-full xl:w-col3 mt-7")
+                                    div(class=" block text-font 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-body mb-4=infa")=infa[0]
+                                    div(class="block text-dark text-moremedium xxl:text-semiextramedium lg:text-moremedium font-body mb-2")=infa[1]
+                                    div(class=" block text-font 2xl:text-normal xl:text-normal2 lg:text-semismall text-small2 font-body")=infa[2]
+                    .w-full.block.row.mt-12 
+                        h3(class="text-semimedium text-dark font-body")=aboutinvestmentTEXT[0] 
+                        .invfacts(class="w-full flex flex-wrap")
+                            each abotinv in aboutinvestmentTEXT[1]
+                                .abotinvctItem(class="w-full xl:w-col3 mt-7 flex xxl:flex-wrap xxl:ga-5")
+                                    .icon(class="w-[41px] h-[41px] pr-2 pl-2 pt-2 pb-2 ltr:mr-5 rtl:ml-5 rounded-full border-1 border-solid border-main text-center table-cell align-middle") 
+                                        img(src=abotinv[0],class="w-[18px] inline-block", alt=abotinv[1])
+                                    .cont.flex-1
+                                        .block.text-dark.text-morenormal1.font-body=abotinv[1] 
+                                        div(class=" block text-font 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-head mt-1")=abotinv[2]
+                    
+                        
+
+
+    -headMainTitle = LubehubTEXT[0]
+    -headMainDesc = LubehubTEXT[1]
+    - bgObject = "image"
+    -headMainImg = "../assets/headers/lubehub.jpg"
+    include includes/_mainHeader
+    section.main-overview#mainOverview(class="h-max w-full relative pt-28 pb-28")
+        .main-wrapper(class="relative w-full z-9")
+            .content(class="flex gap-7")
+                div(class="w-full md:w-col3")
+                    img(src="assets/lubehob-2.png", alt=title, class="w-full lg:w-[391px]")
+                    
+                div(class="w-full md:w-col9")            
+                    h2(class="text-dark font-body mt-12 mb-3 font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                        span.block(data-aos="fade-up")=LubehubOverTEXT[0]
+                    h5(class="block w-full text-font font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small")                        
+                        p=LubehubOverTEXT[1]
+                        p=LubehubOverTEXT[2]
+    section.add-value#addValue(class="h-max w-full relative pt-28 pb-28 before:w-75p before:h-full before:absolute before:top-0 before:bg-grey6 before:content-[''] before:block ltr:before:left-0 rtl:before:right-0")
+        .main-wrapper(class="relative w-full z-9")
+            .content(class="w-full flex lg:flex-row gap-8 items-center ")        
+                div(class="w-full lg:w-col7 xl:w-col5 ltr:lg:mr-col1 ltr:xl:mr-col2 rtl:lg:ml-col1 rtl:xl:ml-col2 mt-4 lg:mt-0")     
+                    h2(class="text-dark font-body mt-9 font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase")
+                        span.block(data-aos="fade-up")=keyBenefitsTEXT[0]
+                    h5(class="block w-full mt-5 text-font font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small")                        
+                        p=addValueTEXT[1]               
+                    .cont(class="xxl:text-medium lg:text-morenormal text-normal1 text-dark font-body mt-16 pt-9 w-full styled-ul")        
+                        ul 
+                            each l in addValueListTEXT
+                                li= l 
+                .img(class="w-full lg:w-col4 xl:w-col5 mt-4 lg:mt-0")
+                    img(src="assets/lubehub/1.jpg", class="w-full h-full object-cover", alt="clientsQuotesTEXT")                         
+    section.key-benefits#keyBenefits(class="h-max w-full relative pt-28 pb-36 bg-green2")
+        .main-wrapper(class="relative w-full z-9 text-center")
+            .content(class="w-full block")
+                div(class="w-full lg:w-col8 ltr:lg:ml-col2 rtl:lg:mr-col2 mt-4 lg:mt-0")     
+                    h2(class="text-white font-body mt-9 font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase Z")
+                        span.block(data-aos="fade-up")=keyBenefitsTEXT[0]
+                    h5(class="block w-full mt-5 text-white font-head font-normal 2xl:text-normal xl:text-normal2 lg:text-semismall text-small")=keyBenefitsTEXT[1]                                
+            .content(class="w-full flex flex-wrap 2xl:flex 2xl:flex-nowrap 2xl:flex-row 2xl:gap-5 mt-12 items-start") 
+                .keyBenItem(class="w-full block p-3 h-full mt-16 lg:w-col4 xl:w-col4 xxl:w-col2-4")  
+                    .wrapper(class="w-full h-full relative")
+                        .before(class="absolute block w-full sqaure-size top-0 left-1 right-1 mr-auto ml-auto bg-square-container bg-no-repeat bg-contain")
+                            
+                        .count(class="absolute text-white text-big font-bold -bottom-6 xxl:-top-16 ltr:left-4 rtl:right-4") 01
+                        .cont(class="w-full inline-block mt-10 xxl:mt-0 xxl:w-col10 mr-auto ml-auto relative xxl:table-cell align-middle text-center sqaure-size p-5")
+                            .icon(class="w-[49px] mr-auto ml-auto rounded-full table", data-aos="fade-up") 
+                                .icon-img.table-cell.w-full.align-middle
+                                    img(src="assets/lubehub/icon-1.svg", alt=keyBenefitsItemsTEXT[0][0] ,class="!w-full", data-aos="zoom-in", data-aos-delay="300")
+                            .cont.pt-5.pb-5(class="h-max") 
+                                .ti(class="block w-full text-morenormal font-normal leading-7 font-body text-dark break-title ", data-aos="fade-up",  data-aos-delay="200",  data-break-after="2")=keyBenefitsItemsTEXT[0][0]    
+                                .desc(class="block w-full 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal font-head text-font", data-aos="fade-up",  data-aos-delay="300")=keyBenefitsItemsTEXT[0][1] 
+         
+                .keyBenItem(class="w-full block p-3 h-full mt-16 lg:w-col4 xl:w-col4 xxl:w-col2-4")  
+                    .wrapper(class="w-full h-full relative")
+                        .before(class="absolute block w-full sqaure-size top-0 left-1 right-1 mr-auto ml-auto bg-square-container bg-no-repeat bg-contain rotate-90")
+                            
+                        .count(class="absolute text-white text-big font-bold -bottom-6 xxl:-bottom-16 ltr:left-4 rtl:right-4") 02
+                        .cont(class="w-full inline-block mt-10 xxl:mt-0 xxl:w-col10 mr-auto ml-auto relative xxl:table-cell align-middle text-center sqaure-size p-5")
+                            .icon(class="w-[49px] mr-auto ml-auto rounded-full table", data-aos="fade-up") 
+                                .icon-img.table-cell.w-full.align-middle
+                                    img(src="assets/lubehub/icon-2.svg", alt=keyBenefitsItemsTEXT[1][0] ,class="!w-full", data-aos="zoom-in", data-aos-delay="300")
+                            .cont.pt-5.pb-5(class="h-max") 
+                                .ti(class="block w-full text-morenormal font-normal leading-7 font-body text-dark break-title ", data-aos="fade-up",  data-aos-delay="200",  data-break-after="2")=keyBenefitsItemsTEXT[1][0]    
+                                .desc(class="block w-full 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal font-head text-font", data-aos="fade-up",  data-aos-delay="300")=keyBenefitsItemsTEXT[1][1] 
+         
+                .keyBenItem(class="w-full block p-3 h-full mt-16 lg:w-col4 xl:w-col4 xxl:w-col2-4")  
+                    .wrapper(class="w-full h-full relative")
+                        .before(class="absolute block w-full sqaure-size top-0 left-1 right-1 mr-auto ml-auto bg-square-container bg-no-repeat bg-contain -rotate-180")
+                            
+                        .count(class="absolute text-white text-big font-bold -bottom-6 xxl:-top-16 ltr:left-4 rtl:right-4") 03
+                        .cont(class="w-full inline-block mt-10 xxl:mt-0 xxl:w-col10 mr-auto ml-auto relative xxl:table-cell align-middle text-center sqaure-size p-5")
+                            .icon(class="w-[49px] mr-auto ml-auto rounded-full table", data-aos="fade-up") 
+                                .icon-img.table-cell.w-full.align-middle
+                                    img(src="assets/lubehub/icon-1.svg", alt=keyBenefitsItemsTEXT[0][0] ,class="!w-full", data-aos="zoom-in", data-aos-delay="300")
+                            .cont.pt-5.pb-5(class="h-max") 
+                                .ti(class="block w-full text-morenormal font-normal leading-7 font-body text-dark break-title ", data-aos="fade-up",  data-aos-delay="200",  data-break-after="2")=keyBenefitsItemsTEXT[0][0]    
+                                .desc(class="block w-full 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal font-head text-font", data-aos="fade-up",  data-aos-delay="300")=keyBenefitsItemsTEXT[0][1] 
+                .keyBenItem(class="w-full block p-3 h-full mt-16 lg:w-col4 xl:w-col4 xxl:w-col2-4")  
+                    .wrapper(class="w-full h-full relative")
+                        .before(class="absolute block w-full sqaure-size top-0 left-1 right-1 mr-auto ml-auto bg-square-container bg-no-repeat bg-contain -rotate-90")
+                            
+                        .count(class="absolute text-white text-big font-bold -bottom-6 xxl:-bottom-16 ltr:left-4 rtl:right-4") 04
+                        .cont(class="w-full inline-block mt-10 xxl:mt-0 xxl:w-col10 mr-auto ml-auto relative xxl:table-cell align-middle text-center sqaure-size p-5")
+                            .icon(class="w-[49px] mr-auto ml-auto rounded-full table", data-aos="fade-up") 
+                                .icon-img.table-cell.w-full.align-middle
+                                    img(src="assets/lubehub/icon-1.svg", alt=keyBenefitsItemsTEXT[0][0] ,class="!w-full", data-aos="zoom-in", data-aos-delay="300")
+                            .cont.pt-5.pb-5(class="h-max") 
+                                .ti(class="block w-full text-morenormal font-normal leading-7 font-body text-dark break-title ", data-aos="fade-up",  data-aos-delay="200",  data-break-after="2")=keyBenefitsItemsTEXT[0][0]    
+                                .desc(class="block w-full 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal font-head text-font", data-aos="fade-up",  data-aos-delay="300")=keyBenefitsItemsTEXT[0][1] 
+                .keyBenItem(class="w-full block p-3 h-full mt-16 lg:w-col4 xl:w-col4 xxl:w-col2-4")  
+                    .wrapper(class="w-full h-full relative")
+                        .before(class="absolute block w-full sqaure-size top-0 left-1 right-1 mr-auto ml-auto bg-square-container bg-no-repeat bg-contain -rotate-180")
+                            
+                        .count(class="absolute text-white text-big font-bold -bottom-6 xxl:-top-16 ltr:left-4 rtl:right-4") 05
+                        .cont(class="w-full inline-block mt-10 xxl:mt-0 xxl:w-col10 mr-auto ml-auto relative xxl:table-cell align-middle text-center sqaure-size p-5")
+                            .icon(class="w-[49px] mr-auto ml-auto rounded-full table", data-aos="fade-up") 
+                                .icon-img.table-cell.w-full.align-middle
+                                    img(src="assets/lubehub/icon-1.svg", alt=keyBenefitsItemsTEXT[0][0] ,class="!w-full", data-aos="zoom-in", data-aos-delay="300")
+                            .cont.pt-5.pb-5(class="h-max") 
+                                .ti(class="block w-full text-morenormal font-normal leading-7 font-body text-dark break-title ", data-aos="fade-up",  data-aos-delay="200",  data-break-after="2")=keyBenefitsItemsTEXT[0][0]    
+                                .desc(class="block w-full 2xl:text-normal xl:text-normal2 lg:text-semismall text-small font-normal font-head text-font", data-aos="fade-up",  data-aos-delay="300")=keyBenefitsItemsTEXT[0][1] 
+
+    section.key-benefits#keyBenefits(class="h-max w-full relative pt-28 pb-36 bg-grey5")
+        .main-wrapper(class="relative w-full z-9 text-center")
+            .content(class="flex flex-wrap items-start gap-7 text-center")
+                div(class="w-full -mb-7 text-center")
+                    h2(class="text-dark w-full font-body font-normal xxl:text-big lg:text-moremedium2 text-moremedium uppercase" data-aos="fade-up")=InvestmentTEXT[0]
+                    
+                div(class="w-full lg:w-col8 xl:w-col6 mr-auto ml-auto text-center")
+                    h5(class="text-font font-head font-thin 2xl:text-normal xl:text-normal2 lg:text-semismall text-small mt-4" data-aos="fade-up")=InvestmentTEXT[1]
+            .content(class="w-full block")
+                #InvestmentsTabs.nav-tabs.mb-12(role='tablist' class="w-max m-auto flex lg:flex-row text-center gap-3 ")       
+                    -var i = 0
+                    each inv in InvestmentItemsTEXT              
+                        -if(i == 0){var act ="active", aria = "true"}else{var act ="", aria = "false"}
+                        .btn.nav-link(id=i+"-tab",data-tab-target='#tabcont-' + i data-tab-parent="#InvestmentsTabsContent" role='tab' aria-selected=aria, class="cursor-pointer inline-block m-auto xxl:min-w-[344px] font-body relative pt-3 pb-3 pr-8 pl-8 mt-12 bg-white text-dark uppercase xl:text-morenormal text-normal font-normal group hover:text-white " + act, data-aos="fade-up" data-aos-delay="200")                            
+                            .before(class="bg-dark w-0 top-0 bottom-0 h-full trans ltr:left-0 rtl:right-0 z-4 absolute ltr:group-hover:w-full rtl:group-hover:w-full ")
+                            span.relative.z-9=inv
+                        -i++                
+        #InvestmentsTabsContent.tabs-content.relative          
+            .tab-pane(id="tabcont-0", role='tabpanel' class="w-full pt-4 pb-4 block active" )
+                .tab-wrapper.w-full(class="w-full pt-5 pb-5")
+                    include includes/_Investment 
+            .tab-pane(id="tabcont-1", role='tabpanel' class="w-full pt-4 pb-4 block" )
+                .tab-wrapper.w-full(class="w-full pt-5 pb-5")
+                    include includes/_Investment1 
+            .tab-pane(id="tabcont-2", role='tabpanel' class="w-full pt-4 pb-4 block" )
+                .tab-wrapper.w-full(class="w-full pt-5 pb-5")
+                    include includes/_Investment2 
+            .tab-pane(id="tabcont-3", role='tabpanel' class="w-full pt-4 pb-4 block" )
+                .tab-wrapper.w-full(class="w-full pt-5 pb-5")
+                    include includes/_Investment3 
+
+
+    
+    - subFactsTEXT = LubehubincentivesTEXT[0]
+    - subFactsDesc = LubehubincentivesTEXT[1]
+    - allSubFactsTEXT = whoAllFactsTEXT
+    include includes/_mainFacts     
+    include includes/_mainFaqs     
+    include includes/_mainContact     

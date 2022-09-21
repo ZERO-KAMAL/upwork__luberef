@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Co Text';
+    src: url('CoText-Regular.eot');
+    src: url('CoText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('CoText-Regular.woff2') format('woff2'),
+        url('CoText-Regular.woff') format('woff'),
+        url('CoText-Regular.ttf') format('truetype'),
+        url('CoText-Regular.svg#CoText-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Co Text';
+    src: url('CoText-Bold.eot');
+    src: url('CoText-Bold.eot?#iefix') format('embedded-opentype'),
+        url('CoText-Bold.woff2') format('woff2'),
+        url('CoText-Bold.woff') format('woff'),
+        url('CoText-Bold.ttf') format('truetype'),
+        url('CoText-Bold.svg#CoText-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Co Text';
+    src: url('CoText-Light.eot');
+    src: url('CoText-Light.eot?#iefix') format('embedded-opentype'),
+        url('CoText-Light.woff2') format('woff2'),
+        url('CoText-Light.woff') format('woff'),
+        url('CoText-Light.ttf') format('truetype'),
+        url('CoText-Light.svg#CoText-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

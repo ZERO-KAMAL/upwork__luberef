@@ -1,0 +1,16 @@
+{
+  "name": "luberef",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "tailwindcss-border-gradients": "^2.0.3"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ../src/tailwind-style.css -o ../css/tailwind-style.css",
+    "watch": "tailwindcss -i ../src/tailwind-style.css -o ../css/tailwind-style.css --watch"
+  }
+}

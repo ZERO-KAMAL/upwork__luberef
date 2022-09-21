@@ -1,0 +1,18 @@
+
+extends index.pug
+block title
+    title= title + " | " + bottomNavTEXT[1]
+block mainContent
+    -headMainTitle = bottomNavTEXT[1]
+    -headMainDesc = whoLeadershipTEXT[1]
+    - bgObject = "image"
+    -headMainImg = "../assets/headers/products.jpg"
+    include includes/_mainHeader
+    - var overviewSecTitle = overProductsTEXT[0]
+    - var overviewSecDesc = [overProductsTEXT[1]]
+    - var overviewSecImg = "assets/products/overview.jpg"
+    include includes/_mainOverview
+    include includes/_productsValue
+    - sliderbgcolor = "white-bg"
+    include includes/_mainProducts
+    include includes/_mainContact                       
